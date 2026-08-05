@@ -6,28 +6,17 @@
 <title>產險證照 · 數字口訣速記</title>
 <style>
   :root{
-    --bg:#f5f6f8;
-    --card:#ffffff;
-    --ink:#1c1f24;
-    --sub:#606a76;
-    --line:#e3e6ea;
-    --accent:#2f6bd8;
-    --accent-soft:#eaf1fd;
-    --warn:#c2410c;
-    --warn-soft:#fff2e8;
-    --law:#6d28d9;
-    --law-soft:#f3edff;
+    --bg:#f5f6f8; --card:#ffffff; --ink:#1c1f24; --sub:#606a76; --line:#e3e6ea;
+    --accent:#2f6bd8; --accent-soft:#eaf1fd;
+    --warn:#c2410c; --warn-soft:#fff2e8;
+    --law:#6d28d9; --law-soft:#f3edff;
+    --car:#047857; --car-soft:#e8f7f1;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   body{
-    margin:0;
-    padding:0 14px 60px;
-    background:var(--bg);
-    color:var(--ink);
+    margin:0; padding:0 14px 60px; background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
-    font-size:17px;
-    line-height:1.65;
-    -webkit-text-size-adjust:100%;
+    font-size:17px; line-height:1.65; -webkit-text-size-adjust:100%;
   }
   header{padding:24px 4px 10px;}
   h1{font-size:24px;margin:0 0 4px;letter-spacing:.5px;}
@@ -35,99 +24,61 @@
 
   nav{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 6px;}
   nav a{
-    flex:1 1 auto;text-align:center;min-width:82px;
-    padding:9px 6px;background:var(--card);
-    border:1px solid var(--line);border-radius:11px;
+    flex:1 1 auto;text-align:center;min-width:82px;padding:9px 6px;
+    background:var(--card);border:1px solid var(--line);border-radius:11px;
     color:var(--accent);font-size:14px;font-weight:600;text-decoration:none;
   }
   nav a.hot{background:#fff4ed;border-color:#f6d3bc;color:var(--warn);}
+  nav a.carnav{background:var(--car-soft);border-color:#b7e4d1;color:var(--car);}
 
-  h2{
-    font-size:19px;margin:30px 0 12px;padding-left:10px;
-    border-left:4px solid var(--accent);scroll-margin-top:12px;
-  }
+  h2{font-size:19px;margin:30px 0 12px;padding-left:10px;border-left:4px solid var(--accent);scroll-margin-top:12px;}
   h2.law-h{border-left-color:var(--law);}
+  h2.car-h{border-left-color:var(--car);}
+  h3{font-size:16.5px;margin:22px 0 8px;color:#333;}
 
-  .mnemonic{
-    background:var(--accent-soft);border:1px solid #c8dbfa;
-    border-radius:14px;padding:14px 16px;margin:12px 0 18px;
-  }
-  .mnemonic .tag{
-    display:inline-block;font-size:12px;font-weight:700;color:#fff;
-    background:var(--accent);padding:2px 9px;border-radius:20px;margin-bottom:8px;
-  }
-  .chant{
-    font-size:22px;font-weight:700;letter-spacing:3px;
-    margin:2px 0 8px;color:#17376e;
-  }
+  .mnemonic{background:var(--accent-soft);border:1px solid #c8dbfa;border-radius:14px;padding:14px 16px;margin:12px 0 18px;}
+  .mnemonic .tag{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--accent);padding:2px 9px;border-radius:20px;margin-bottom:8px;}
+  .chant{font-size:22px;font-weight:700;letter-spacing:3px;margin:2px 0 8px;color:#17376e;}
   .mnemonic .why{font-size:14.5px;color:#31456b;margin:0;}
+  .mnemonic.car-m{background:var(--car-soft);border-color:#b7e4d1;}
+  .mnemonic.car-m .tag{background:var(--car);}
+  .mnemonic.car-m .chant{color:#065f46;}
+  .mnemonic.car-m .why{color:#1f5745;}
 
-  .num-block{
-    background:var(--card);border:1px solid var(--line);
-    border-radius:14px;margin-bottom:12px;overflow:hidden;
-  }
-  .num-head{
-    display:flex;align-items:baseline;gap:10px;
-    padding:12px 15px 8px;border-bottom:1px dashed var(--line);
-  }
+  .num-block{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;}
+  .num-head{display:flex;align-items:baseline;gap:10px;padding:12px 15px 8px;border-bottom:1px dashed var(--line);}
   .num{font-size:27px;font-weight:800;color:var(--accent);letter-spacing:-.5px;line-height:1.1;}
   .num-unit{font-size:14px;color:var(--sub);font-weight:600;}
   ul.items{list-style:none;margin:0;padding:9px 15px 13px;}
   ul.items li{padding:5px 0 5px 16px;position:relative;font-size:15.5px;}
-  ul.items li::before{
-    content:"";position:absolute;left:2px;top:14px;
-    width:5px;height:5px;border-radius:50%;background:#b6c2d1;
-  }
+  ul.items li::before{content:"";position:absolute;left:2px;top:14px;width:5px;height:5px;border-radius:50%;background:#b6c2d1;}
   ul.items li b{color:#0f3f8f;}
 
-  .trap{
-    background:var(--warn-soft);border:1px solid #f6d3bc;
-    border-left:4px solid var(--warn);border-radius:10px;
-    padding:11px 14px;margin:14px 0 20px;font-size:14.5px;color:#7c2d12;
-  }
+  .trap{background:var(--warn-soft);border:1px solid #f6d3bc;border-left:4px solid var(--warn);border-radius:10px;padding:11px 14px;margin:14px 0 20px;font-size:14.5px;color:#7c2d12;}
   .trap b{color:var(--warn);}
 
-  /* 錯題卡 */
-  .q-card{
-    background:var(--card);border:1px solid var(--line);
-    border-radius:14px;padding:14px 16px;margin-bottom:14px;
-  }
+  .q-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px;}
   .q-text{font-size:15.5px;font-weight:600;margin:0 0 10px;line-height:1.55;}
-  .q-ans{
-    font-size:15px;background:#eefaf1;border:1px solid #bfe6cb;
-    border-radius:9px;padding:7px 11px;margin-bottom:6px;color:#14532d;
-  }
-  .q-ans{margin-bottom:9px;}
+  .q-ans{font-size:15px;background:#eefaf1;border:1px solid #bfe6cb;border-radius:9px;padding:7px 11px;margin-bottom:9px;color:#14532d;}
   .q-why{font-size:14.5px;color:#3d4650;margin:0;}
   .q-why b{color:#0f3f8f;}
 
-  /* 法源對照表 */
-  .law-box{
-    background:var(--law-soft);border:1px solid #ddd0fb;
-    border-left:4px solid var(--law);border-radius:12px;
-    padding:14px 16px;margin:12px 0 18px;
-  }
-  .law-box .tag{
-    display:inline-block;font-size:12px;font-weight:700;color:#fff;
-    background:var(--law);padding:2px 9px;border-radius:20px;margin-bottom:9px;
-  }
-  table.cmp{
-    width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;
-  }
-  table.cmp th,table.cmp td{
-    border:1px solid #ddd0fb;padding:7px 8px;text-align:left;
-  }
+  .law-box{background:var(--law-soft);border:1px solid #ddd0fb;border-left:4px solid var(--law);border-radius:12px;padding:14px 16px;margin:12px 0 18px;}
+  .law-box .tag{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--law);padding:2px 9px;border-radius:20px;margin-bottom:9px;}
+  table.cmp{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
+  table.cmp th,table.cmp td{border:1px solid #ddd0fb;padding:7px 8px;text-align:left;}
   table.cmp th{background:#e9dffd;font-weight:700;color:#3b1d80;}
   table.cmp td b{color:#5b21b6;}
 
-  footer{
-    margin-top:36px;padding-top:16px;border-top:1px solid var(--line);
-    color:var(--sub);font-size:13px;text-align:center;
-  }
-  .top{
-    display:block;text-align:center;margin-top:18px;
-    font-size:14px;color:var(--accent);text-decoration:none;font-weight:600;
-  }
+  /* 折舊率表 */
+  table.dep{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--card);}
+  table.dep th,table.dep td{border:1px solid #cfe8de;padding:6px 8px;text-align:center;}
+  table.dep th{background:#d6f0e5;color:#065f46;font-weight:700;}
+  table.dep td:first-child{text-align:left;}
+  table.dep tr.hl td{background:#fff8e6;font-weight:700;}
+
+  footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-align:center;}
+  .top{display:block;text-align:center;margin-top:18px;font-size:14px;color:var(--accent);text-decoration:none;font-weight:600;}
 </style>
 </head>
 <body>
@@ -142,6 +93,7 @@
   <a class="hot" href="#mywrong">重點題型</a>
   <a class="hot" href="#terms">名詞定義</a>
   <a class="hot" href="#gov">監理數字</a>
+  <a class="carnav" href="#car">汽車保險</a>
   <a href="#days">天數</a>
   <a href="#hours">小時</a>
   <a href="#months">月與年</a>
@@ -152,7 +104,7 @@
   <a href="#order">順序題</a>
 </nav>
 
-<!-- ===== 法源辨識（最高優先） ===== -->
+<!-- ===== 法源辨識 ===== -->
 <h2 class="law-h" id="lawsrc">⚠️ 零、先看法源再看數字</h2>
 
 <div class="trap">
@@ -194,7 +146,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<!-- ===== 我的錯題 ===== -->
+<!-- ===== 重點題型 ===== -->
 <h2 id="mywrong">一、重點題型（優先複習）</h2>
 
 <div class="q-card">
@@ -351,20 +303,331 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
+<!-- ===== 汽車保險專區 ===== -->
+<h2 class="car-h" id="car">四、汽車保險（佔實務 44%，最重要）</h2>
+
+<h3>4-1　全損折舊率與賠償率</h3>
+
+<div class="trap">
+  <b>先看題目問哪一個：</b>「折舊率」和「賠償率」是互補的 →
+  <b>賠償率 ＝ 100% − 折舊率</b>。答錯常常只是因為看錯詞。
+</div>
+
+<div class="mnemonic car-m">
+  <span class="tag">口訣</span>
+  <div class="chant">自三營八 · 每月加二</div>
+  <p class="why"><b>自</b>用車從 <b>3%</b> 起跳、<b>營</b>業用車從 <b>8%</b> 起跳，兩張表都是每多一個月 <b>+2%</b>，兩者永遠相差 5%。</p>
+</div>
+
+<div class="mnemonic car-m">
+  <span class="tag">公式</span>
+  <div class="chant">自 2n+1 · 營 2n+6</div>
+  <p class="why">n＝第幾個月區間（未滿1個月 n=1、1~2個月 n=2…）。例：營業車 10~11 個月 n=11 → 2×11+6＝<b>28%</b> 折舊 → 賠償率 <b>72%</b>。</p>
+</div>
+
+<table class="dep">
+  <tr><th>保單生效後</th><th>自用車折舊</th><th>營業車折舊</th><th>營業車賠償率</th></tr>
+  <tr><td>未滿 1 個月</td><td>3%</td><td>8%</td><td>92%</td></tr>
+  <tr class="hl"><td>1～2 個月</td><td>5% ✓</td><td>10%</td><td>90%</td></tr>
+  <tr class="hl"><td>2～3 個月</td><td>7%</td><td>12% ✓</td><td>88% ✓</td></tr>
+  <tr><td>3～4 個月</td><td>9%</td><td>14%</td><td>86%</td></tr>
+  <tr><td>4～5 個月</td><td>11%</td><td>16%</td><td>84%</td></tr>
+  <tr><td>5～6 個月</td><td>13%</td><td>18%</td><td>82%</td></tr>
+  <tr><td>6～7 個月</td><td>15%</td><td>20%</td><td>80%</td></tr>
+  <tr class="hl"><td>7～8 個月</td><td>17%</td><td>22% ✓</td><td>78%</td></tr>
+  <tr><td>8～9 個月</td><td>19%</td><td>24%</td><td>76%</td></tr>
+  <tr><td>9～10 個月</td><td>21%</td><td>26%</td><td>74%</td></tr>
+  <tr class="hl"><td>10～11 個月</td><td>23%</td><td>28% ✓</td><td>72% ✓</td></tr>
+  <tr><td>11～12 個月</td><td>25%</td><td>30%</td><td>70%</td></tr>
+</table>
+<p style="font-size:13.5px;color:#7a6a3a;background:#fff8e6;border:1px solid #f0e0b0;border-radius:9px;padding:9px 12px;margin:10px 0 18px;">
+  ✓ 是題目已驗證的格子（共 5 個點，全部符合公式）。<b>注意：7 個月不是上限</b>，表格一路排到 12 個月。
+</p>
+
+<div class="q-card">
+  <p class="q-text">Q. 自用汽車全損理賠，保單生效日至事故發生經過一個月以上未滿二個月者，其折舊率為多少？</p>
+  <div class="q-ans">✅ <b>5%</b></div>
+  <p class="q-why">自用車第 2 個級距。用公式：<b>2×級距數＋1</b>＝2×2＋1＝5%。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 營業用汽車全損理賠，保單生效日至事故發生已經過 7 個月以上，其該車之折舊率應為多少？</p>
+  <div class="q-ans">✅ <b>22%</b></div>
+  <p class="q-why">營業用車耗損快，折舊率明顯高於自用車同期（自用車同期為 17%）。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 營業用汽車全損，保單生效日至事故發生經過二個月以上未滿三個月者，其<b>折舊率</b>為多少？</p>
+  <div class="q-ans">✅ <b>12%</b></div>
+  <p class="q-why">套公式 2n+6，n=3 → 12%。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 營業用汽車全損之理賠計算，經過二個月以上未滿三個月者，其<b>賠償率</b>為多少？</p>
+  <div class="q-ans">✅ <b>88%</b></div>
+  <p class="q-why">題目問的是<b>賠償率</b>不是折舊率。折舊 12% → 賠償率 100−12＝<b>88%</b>。<br><b>看到「賠償率」先在心裡做 100 減。</b></p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 營業用汽車全損，經過<b>十個月以上未滿十一個月</b>者，其賠償率為多少？</p>
+  <div class="q-ans">✅ <b>72%</b></div>
+  <p class="q-why">n=11 → 折舊 2×11+6＝28% → 賠償率 <b>72%</b>。<br>這題證明<b>表格不是在 7 個月封頂</b>，會一路遞減到 12 個月。</p>
+</div>
+
+<h3>4-2　效力狀態：暫行停止（第六個詞）</h3>
+
+<div class="q-card">
+  <p class="q-text">Q. 被保險汽車行車執照業經過戶，而保險契約在行車執照生效日起超過十日內仍未申請權益移轉者，則保險契約效力應如何？</p>
+  <div class="q-ans">✅ <b>暫行停止</b></div>
+  <p class="q-why">契約<b>沒有消滅</b>，只是保險公司暫時不負責；補辦權益移轉後保障就恢復。<br><b>記法：暫行停止是「暫停鍵」，不是「刪除鍵」。</b></p>
+</div>
+
+<div class="law-box">
+  <span class="tag">效力六詞</span>
+  <table class="cmp">
+    <tr><th>用語</th><th>契約還在嗎</th><th>能救回來</th></tr>
+    <tr><td>無效</td><td>自始不存在</td><td>✗</td></tr>
+    <tr><td>解除／撤銷</td><td>溯及訂約日消滅</td><td>✗</td></tr>
+    <tr><td>終止／失效</td><td>從某時點往後消滅</td><td>✗</td></tr>
+    <tr><td><b>暫行停止</b></td><td><b>契約還在</b></td><td><b>✓ 補辦即恢復</b></td></tr>
+  </table>
+</div>
+
+<h3>4-3　自負額：三個「零」的情形</h3>
+
+<div class="q-card">
+  <p class="q-text">Q. 依汽車保險定型化契約規定，汽車車體損失險<b>丙式</b>之基本自負額應為多少？</p>
+  <div class="q-ans">✅ <b>免自負額（0）</b></div>
+  <p class="q-why">3,000／5,000／7,000 那組是<b>甲式、乙式</b>第 1／2／3 次的自負額，丙式不適用。題目特別問「<b>基本</b>自負額」就是在測這點。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 加保颱風、地震、海嘯、冰雹、洪水或因雨積水附加條款時，其自負額如何選擇？</p>
+  <div class="q-ans">✅ <b>該附加條款無自負額規定</b></div>
+  <p class="q-why">天災附加條款<b>根本沒有自負額這個設計</b>，所以不是「選基本」也不是「選 10%／20%」，而是<b>沒得選</b>。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 陳大凱投保甲式車體險，保險期間總共出險二次，第二次因重大車禍車輛嚴重受損無法修復，倘選擇<b>全損現金賠償</b>方式，應負擔多少自負額？</p>
+  <div class="q-ans">✅ <b>無須負擔</b></div>
+  <p class="q-why"><b>全損就免自負額</b>，不管第幾次出險。3,000／5,000／7,000 只適用「每次事故」的修理理賠，一旦認定全損就不適用。<br>陷阱：題目故意寫「第二次出險」引導你選 5,000。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 汽車貨物運送人責任保險規定，本保險契約之基本自負額為多少？</p>
+  <div class="q-ans">✅ <b>10,000 元</b></div>
+  <p class="q-why">這張保單<b>「有」自負額</b>，每一事故被保險人先自負 1 萬元。別跟天災附加條款（無自負額）搞混。</p>
+</div>
+
+<div class="law-box">
+  <span class="tag">自負額全表</span>
+  <table class="cmp">
+    <tr><th>有自負額</th><th>金額</th></tr>
+    <tr><td>甲式／乙式車體險</td><td><b>3,000／5,000／7,000</b></td></tr>
+    <tr><td>貨物運送人責任險</td><td><b>10,000</b></td></tr>
+    <tr><td>竊盜險</td><td>保額 10%、20% 或更高</td></tr>
+  </table>
+  <table class="cmp" style="margin-top:10px;">
+    <tr><th>無自負額</th><th>說明</th></tr>
+    <tr><td>車體險<b>丙式</b></td><td>基本自負額為 0</td></tr>
+    <tr><td><b>天災</b>附加條款</td><td>無自負額規定</td></tr>
+    <tr><td><b>全損</b>理賠</td><td>含全損現金賠償</td></tr>
+    <tr><td>駕駛人傷害險、第三人責任險</td><td>—</td></tr>
+  </table>
+</div>
+
+<h3>4-4　「每一意外事故」的定義（考很多次）</h3>
+
+<div class="mnemonic car-m">
+  <span class="tag">口訣</span>
+  <div class="chant">責任是天花板 · 賠償是落點</div>
+  <p class="why">條款用語是「最高<b>責任</b>金額」＝上限；「賠償金額」是實際依損害認定賠出去的錢。問「保險金額係指何者」要選<b>責任</b>金額。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 汽車第三人責任保險乘客體傷責任附加條款所載之「每一意外事故」之保險金額之定義為何？</p>
+  <div class="q-ans">✅ 係指保險公司對<b>每一次意外事故之最高責任額</b></div>
+  <p class="q-why">一台車撞到後有 5 位乘客受傷，「每一意外事故 200 萬」是指<b>這 5 人加起來最多賠 200 萬</b>，不是每人各 200 萬。<br>
+  ・<b>每一人</b> → 對單一受害人的上限<br>
+  ・<b>每一意外事故</b> → 一次事故所有受害人的<b>總額</b>上限</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 汽車第三人責任保險乘客體傷責任附加條款之規定，其所載「每一意外事故」之保險金額，係指下列何者？</p>
+  <div class="q-ans">✅ <b>最高責任金額</b></div>
+  <p class="q-why">條款明確用語是「<b>責任</b>金額」。選「最高賠償金額」會錯，因為賠償金額是實際賠付概念，可能遠低於責任上限。</p>
+</div>
+
+<h3>4-5　雇主責任條款（兩種要分清）</h3>
+
+<div class="q-card">
+  <p class="q-text">Q. 汽車第三人責任保險雇主責任<b>附加條款</b>是適用何種保單？</p>
+  <div class="q-ans">✅ <b>自用汽車保單</b></div>
+  <p class="q-why">看到「<b>附加條款</b>」四個字 → <b>自用車</b>。營業用車有自己專屬的「雇主責任保險條款」，不叫附加條款。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 營業用汽車保險參考條款之雇主責任保險條款對於「受僱人」之定義，下列何者為正確？</p>
+  <div class="q-ans">✅ 一定或不定期限內為被保險人<b>服務</b>、並接受<b>給付報酬</b>、且<b>年滿 15 歲</b>之人</div>
+  <p class="q-why">三要件缺一不可。陷阱設在兩處：<b>漏掉「給付報酬」</b>，或把 15 歲寫成 <b>18 歲</b>。<br><b>記法：服務＋領錢＋滿15。</b></p>
+</div>
+
+<h3>4-6　保費計算</h3>
+
+<div class="mnemonic car-m">
+  <span class="tag">口訣</span>
+  <div class="chant">收錢短期費率 · 退錢按日比例</div>
+  <p class="why">投保未滿一年 → 用<b>短期費率</b>（比按日貴）；中途終止退費 → 按<b>日比例</b>。這個不對稱很愛考。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 張三因計劃年底出國，故僅要投保半年之汽車保險，請問其保險費如何計算？</p>
+  <div class="q-ans">✅ 按<b>短期費率</b>計算</div>
+  <p class="q-why">保險期間未滿一年時用「短期費率表」，不是單純按日比例。因為保險公司固定成本（核保、出單、行政）不會因保期短而減半，加上短期投保有<b>逆選擇</b>風險（有人專挑最危險季節投保），所以短期費率必然<b>高於</b>按日比例。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 就法人自小客、自小貨車種而言，下列何者因素與汽車車體損失險保險費計算有關？</p>
+  <div class="q-ans">✅ <b>肇事賠款紀錄</b></div>
+  <p class="q-why">法人投保時被保險人是「<b>公司</b>」不是某個人，所以姓名、年齡、性別這些<b>從人因子完全不適用</b>，只能看它撞過幾次。<br>對照：個人戶查<b>身分證字號</b> 3 年紀錄、公司戶查<b>車牌號碼</b> 3 年紀錄。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 汽車貨物運送人責任保險規定，非以貨櫃運送之貨物，其保險費按「貨物」部份之保險費加收多少？</p>
+  <div class="q-ans">✅ <b>百分之二十</b></div>
+  <p class="q-why">沒裝貨櫃 → 容易碰撞、遺失、受潮 → 風險高 → 加收 <b>20%</b>。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 車隊附加條款規定，被保險人之經驗純保費損失率於 30.1% 至 40% 時，其機車第三人責任險純保費可<b>減</b>多少幅度？</p>
+  <div class="q-ans">✅ <b>−14%</b></div>
+  <p class="q-why">車隊條款依「經驗純保費損失率」分級：損失率越低折扣越多。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 車隊附加條款規定，當經驗純保費損失率<b>高於 150.1% 以上</b>時，其機車第三人責任險純保費可<b>加</b>多少幅度？</p>
+  <div class="q-ans">✅ <b>＋16%</b></div>
+  <p class="q-why">最高風險級距。這張分級表很細碎且出題比重低，<b>記「低 30.1~40% 減 14%、高 150.1% 以上加 16%」兩格就好</b>。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. <b>進口</b>汽車之零件、配件被竊損失附加條款規定，其保險費按保險金額之 0.25% 計算，但不得低於新台幣多少？</p>
+  <div class="q-ans">✅ <b>2,000 元</b></div>
+  <p class="q-why">保費費率 <b>0.25%</b>，但設有最低保費 <b>2,000 元</b>（避免小額保單收不回行政成本）。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 自用汽車保險除自用小客車及自用小貨車以外之其他車種，倘車齡逾一年以上至滿二年者，其車齡減費係數應為多少？</p>
+  <div class="q-ans">✅ <b>−0.05</b></div>
+  <p class="q-why">車齡減費三段：1~2 年 <b>−0.05</b>、2~3 年 <b>−0.10</b>、3 年以上 <b>−0.15</b>。記法：<b>5、10、15</b>。</p>
+</div>
+
+<h3>4-7　理賠與契約</h3>
+
+<div class="q-card">
+  <p class="q-text">Q. 被保險汽車行駛途中因路面崎嶇不平撞及凹洞，致鋼圈受損、輪胎被刺破，底盤及前葉子板亦有損壞，該鋼圈及輪胎依何種險種理賠？</p>
+  <div class="q-ans">✅ 依<b>車體損失險</b>理賠</div>
+  <p class="q-why">這是<b>意外事故</b>造成車體本身損害 → 車體險負責。<br>「零件、配件<b>被竊</b>損失險」只限<b>遭竊</b>的情形，本題不是竊盜，不適用。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 倘由要保人或被保險人提出終止自用汽車保險契約時，有何規定？</p>
+  <div class="q-ans">✅ <b>得隨時辦理終止</b></div>
+  <p class="q-why">任意險（非強制險）是自願投保，<b>你想退隨時可以退</b>，不需保險公司「同意」，保險公司也不得拒絕；已出過險照樣能終止。保費按未到期日數退還。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 要保人或被保險人以<b>現金以外</b>之付款方式交付保險費而<b>未實現</b>者，保險公司應如何處理？</p>
+  <div class="q-ans">✅ <b>終止</b></div>
+  <p class="q-why">用支票、票據、轉帳繳費但最後<b>沒真正入帳</b> → 視同保費未繳清 → 保險公司得<b>終止</b>契約。<br>不是「無效」（自始不生效）、不是「解除」（溯及既往）、也不是「停止」。<b>保費問題一律走「終止」。</b></p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 汽車貨物運送人責任保險條款規定，保險公司以書面通知送達被保險人最後所留住址終止本契約，該項通知應於終止生效幾日前送達？</p>
+  <div class="q-ans">✅ <b>十五日</b></div>
+  <p class="q-why">呼應法規的「保險人終止契約須提前 <b>15 天</b>通知」，同一個邏輯——給被保險人時間重新投保。<b>15 天這格有兩個用途，一起記。</b></p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 保險公司於接到理賠申請文件後，因可歸責於自己之事由未能在規定期限給付者，應付遲延利息，其利率以多少計算？</p>
+  <div class="q-ans">✅ <b>年利一分</b></div>
+  <p class="q-why">「年利一分」＝年利率 <b>10%</b>（一分=10%、二分=20%）。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 若被保險人因處理民事賠償請求所生之費用及民事訴訟所生之費用，事先經保險公司同意者由保險公司償還，但應賠償之金額<b>超過保險金額</b>者，有何限制？</p>
+  <div class="q-ans">✅ 僅按<b>保險金額與應賠償金額之比例</b>分攤</div>
+  <p class="q-why">保額 100 萬、依法應賠 200 萬、訴訟費 10 萬 → 保險公司付 10萬 × (100/200) ＝ <b>5 萬</b>。<br>保險公司只承擔你一半的責任，訴訟費也只分攤一半。<b>不是全額負擔，也不是完全不付。</b></p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 汽車保險定型化契約範本規定其請求時效為二年，若利害關係人能證明其<b>非因疏忽而不知情</b>者，其請求起算點為何？</p>
+  <div class="q-ans">✅ <b>自其知情之日</b>起算</div>
+  <p class="q-why">一般是「原因事實發生時」起算，但能證明<b>不是自己疏忽</b>才不知情，起算點往後延到實際知道那天，時效仍是 2 年。<br>
+  <b>三種起算點別混：</b>一般→原因事實發生時；非因疏忽不知情→<b>自知情之日</b>；責任險→<b>受第三人請求之日</b>。</p>
+</div>
+
+<h3>4-8　適用對象與主管機關</h3>
+
+<div class="q-card">
+  <p class="q-text">Q. 旅客責任保險係承保何種車輛載運旅客？</p>
+  <div class="q-ans">✅ <b>營業用大小客車</b></div>
+  <p class="q-why">旅客責任險是為「<b>載運付費旅客</b>」設計的（遊覽車、客運、公車）。自用客車沒有營業載客行為、特種車（工程車、吊車）不以載客為主，都不適用。<br><b>記法：有收錢載客才叫「旅客」。</b></p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 汽車貨物運送人責任保險條款規定，本保險契約所稱之「被保險人」，意指何人？</p>
+  <div class="q-ans">✅ <b>合法之汽車運送業者</b></div>
+  <p class="q-why">替<b>他人運送貨物</b>的業者才是。<br>・汽車<b>租賃</b>業者 → 業務是出租車輛，不是承攬貨運<br>・營業<b>計程車</b>業者 → 運的是旅客不是貨物</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 強制汽車責任保險之主管機關為何？</p>
+  <div class="q-ans">✅ <b>行政院金融監督管理委員會</b>（金管會）</div>
+  <p class="q-why">強制險雖然跟車有關，但本質是<b>保險業務</b>，主管機關是金管會，不是交通部。<br>
+  <b>三個機關分清楚：</b>金管會→保險監理；交通部／公路主管機關→道路交通、開罰鍰；法務部調查局→洗錢申報。</p>
+</div>
+
+<div class="q-card">
+  <p class="q-text">Q. 就汽車第三人責任保險而言，下列何者為正確？</p>
+  <div class="q-ans">✅ 賠款紀錄係數共 <b>19 級</b></div>
+  <p class="q-why">不是 10 級。另一個錯誤選項「每肇事一次加 1 級」也要注意——調整幅度依規則計算，不是固定加一級。</p>
+</div>
+
+<div class="num-block">
+  <div class="num-head"><span class="num">110%</span><span class="num-unit">綜合率警戒線</span></div>
+  <ul class="items">
+    <li>費率自由化<b>第三階段</b>：任意汽車保險最近連續曆年直接業務或自留業務綜合率 <b>大於 110%</b></li>
+    <li>應於每年 <b>4 月底</b>向主管機關敘明原因及具體改善計畫</li>
+    <li>綜合率＝（賠款＋費用）÷保費收入，超過 100% 就是虧錢</li>
+    <li>記法：<b>110% 亮紅燈、4 月底交報告</b></li>
+  </ul>
+</div>
+
+<div class="num-block">
+  <div class="num-head"><span class="num">車體險</span><span class="num-unit">其他常考</span></div>
+  <ul class="items">
+    <li>從人因子（年齡、性別、賠款紀錄，自 85/07 起）＋從車因子（車種、車齡、價值、廠牌）</li>
+    <li>修理費達「保額扣折舊後」<b>3/4 以上</b> → 推定全損（毀損滅失無法修復亦同）</li>
+    <li><b>進口</b>汽車零配件被竊：保費＝保額 <b>0.25%</b>，不低於 <b>2,000 元</b></li>
+    <li>甲式＞乙式＞丙式（丙式只賠<b>車碰車</b>）</li>
+  </ul>
+</div>
+
+<a class="top" href="#top">↑ 回頂端</a>
+
 <!-- ===== 天數 ===== -->
-<h2 id="days">四、天數</h2>
+<h2 id="days">五、天數</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
   <div class="chant">五知 · 十非 · 十五終</div>
-  <p class="why">「五」天是你<b>知</b>道出事後要通知；「十」天是<b>非</b>你造成的危險增加；「十五」天是保險公司要<b>終</b>止契約時得先講。數字由小到大，責任由近到遠。</p>
+  <p class="why">「五」天是你<b>知</b>道出事後要通知；「十」天是<b>非</b>你造成的危險增加；「十五」天是保險公司要<b>終</b>止契約時得先講。</p>
 </div>
 
 <div class="num-block">
   <div class="num-head"><span class="num">4</span><span class="num-unit">個工作日</span></div>
-  <ul class="items">
-    <li>強制汽車責任險：契約成立後 4 個工作日內，將承保資料傳輸至主管機關</li>
-  </ul>
+  <ul class="items"><li>強制汽車責任險：契約成立後 4 個工作日內，將承保資料傳輸至主管機關</li></ul>
 </div>
 
 <div class="num-block">
@@ -382,15 +645,14 @@
   <ul class="items">
     <li><b>非要保人</b>所致的危險增加 → 10 天內通知</li>
     <li>洗錢防制：疑似洗錢交易 10 個<b>營業日</b>內申報</li>
-    <li>（對照：要保人自己造成的 → 必須<b>事前</b>通知）</li>
+    <li>汽車過戶：行照生效日起逾 10 日未申請權益移轉 → 契約<b>暫行停止</b></li>
+    <li>（對照：要保人自己造成的危險增加 → 必須<b>事前</b>通知）</li>
   </ul>
 </div>
 
 <div class="num-block">
   <div class="num-head"><span class="num">14</span><span class="num-unit">天</span></div>
-  <ul class="items">
-    <li>健康險：同一疾病出院後 14 天內再住同一醫院 → 視為<b>同一次住院</b></li>
-  </ul>
+  <ul class="items"><li>健康險：同一疾病出院後 14 天內再住同一醫院 → 視為<b>同一次住院</b></li></ul>
 </div>
 
 <div class="num-block">
@@ -398,6 +660,7 @@
   <ul class="items">
     <li>保險人<b>終止契約</b>，須提前 15 天通知被保險人</li>
     <li>商業火險：15 天內完成賠付</li>
+    <li>貨物運送人責任險：保險公司書面終止通知，須於生效 <b>15 日前</b>送達</li>
   </ul>
 </div>
 
@@ -411,26 +674,24 @@
 
 <div class="num-block">
   <div class="num-head"><span class="num">180</span><span class="num-unit">天</span></div>
-  <ul class="items">
-    <li>傷害險：意外發生後 180 日內致殘廢，才在給付範圍</li>
-  </ul>
+  <ul class="items"><li>傷害險：意外發生後 180 日內致殘廢，才在給付範圍</li></ul>
 </div>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
   <div class="chant">三停 · 六空</div>
-  <p class="why">「三」十天<b>停</b>工、「六」十天<b>空</b>屋。房子越沒人管越危險，所以空屋門檻一到就直接停效。</p>
+  <p class="why">「三」十天<b>停</b>工、「六」十天<b>空</b>屋。房子越沒人管越危險，空屋門檻一到就直接停效。</p>
 </div>
 
 <a class="top" href="#top">↑ 回頂端</a>
 
 <!-- ===== 小時 ===== -->
-<h2 id="hours">五、小時（天災「視同一次」）</h2>
+<h2 id="hours">六、小時（天災「視同一次」）</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
   <div class="chant">颱48 · 洪72 · 震168</div>
-  <p class="why">照災害「拖多久」排序，數字剛好由小到大：颱風來得快去得快（48）、洪水要退（72）、地震有餘震拖最久（168＝整整 7 天）。</p>
+  <p class="why">照災害「拖多久」排序，數字由小到大：颱風來得快去得快（48）、洪水要退（72）、地震有餘震拖最久（168＝7 天）。</p>
 </div>
 
 <div class="num-block">
@@ -452,18 +713,18 @@
 </div>
 
 <div class="trap">
-  <b>最大陷阱：</b>地震有<b>兩個</b>數字。<b>營造綜合險</b>的地震是 72 小時，<b>住宅</b>地震險才是 168 小時。看到「地震」先問自己：題目講的是工地還是住家？
+  <b>最大陷阱：</b>地震有<b>兩個</b>數字。<b>營造綜合險</b>的地震是 72 小時，<b>住宅</b>地震險才是 168 小時。看到「地震」先問：工地還是住家？
 </div>
 
 <a class="top" href="#top">↑ 回頂端</a>
 
 <!-- ===== 月與年 ===== -->
-<h2 id="months">六、月與年</h2>
+<h2 id="months">七、月與年</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
   <div class="chant">知二 · 發十</div>
-  <p class="why">保險法請求權時效：從「<b>知</b>道」起算 <b>2</b> 年，從「<b>發</b>生」起算 <b>10</b> 年。（個資法的「發生起」是 5 年，別套錯）</p>
+  <p class="why">保險法請求權時效：從「<b>知</b>道」起算 <b>2</b> 年，從「<b>發</b>生」起算 <b>10</b> 年。（個資法的「發生起」是 5 年）</p>
 </div>
 
 <div class="num-block">
@@ -503,6 +764,8 @@
     <li>個資法請求權時效：自<b>知悉</b>起 2 年（相同）</li>
     <li>解除權：訂約後 2 年內</li>
     <li>責任險：自<b>受第三人請求之日</b>起 2 年</li>
+    <li>汽車保險：非因疏忽而不知情者，自<b>知情之日</b>起 2 年</li>
+    <li>業務員停止招攬<b>累計滿 2 年</b> → 撤銷登錄</li>
   </ul>
 </div>
 
@@ -515,13 +778,13 @@
 </div>
 
 <div class="trap">
-  <b>易混：</b>殘廢判定期限有兩個。<b>強制險 1 年</b>、<b>一般傷害險 6 個月</b>。記法：強制險是政策性保險，給的時間比較寬鬆（1年）。
+  <b>易混：</b>殘廢判定期限有兩個。<b>強制險 1 年</b>、<b>一般傷害險 6 個月</b>。強制險是政策性保險，給的時間較寬鬆。
 </div>
 
 <a class="top" href="#top">↑ 回頂端</a>
 
 <!-- ===== 金額 ===== -->
-<h2 id="money">七、金額</h2>
+<h2 id="money">八、金額</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
@@ -554,15 +817,7 @@
 <div class="mnemonic">
   <span class="tag">口訣</span>
   <div class="chant">火險 50 · 100 · 2000</div>
-  <p class="why">火險體傷責任：每人體傷 <b>50</b> 萬、死亡 <b>100</b> 萬、總計最高 <b>2,000</b> 萬。翻倍再翻倍，好記。</p>
-</div>
-
-<div class="num-block">
-  <div class="num-head"><span class="num">3/5/7</span><span class="num-unit">千（甲乙式自負額）</span></div>
-  <ul class="items">
-    <li>第 1 次 3,000 元 ／ 第 2 次 5,000 元 ／ 第 3 次 7,000 元</li>
-    <li>記法：<b>三五七</b>，每次加兩千</li>
-  </ul>
+  <p class="why">火險體傷責任：每人體傷 <b>50</b> 萬、死亡 <b>100</b> 萬、總計最高 <b>2,000</b> 萬。</p>
 </div>
 
 <div class="num-block">
@@ -571,7 +826,6 @@
     <li>強制險汽車：每單 381.94 元</li>
     <li>強制險機車（兩年期）：249.10 元</li>
     <li>經紀人個人保證金 10 萬 ／ 個人責任險 100 萬 ／ 公司責任險 200 萬</li>
-    <li>汽車零件保費＝保額 22%，但不低於 2,000 元；累計賠償上限＝保費 6 倍</li>
     <li>洗錢防制刑責：5 年以下有期徒刑、併科 50 萬元以下罰金</li>
   </ul>
 </div>
@@ -579,12 +833,12 @@
 <a class="top" href="#top">↑ 回頂端</a>
 
 <!-- ===== 百分比 ===== -->
-<h2 id="percent">八、百分比</h2>
+<h2 id="percent">九、百分比</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
   <div class="chant">竊盜 20→50，管線 20→30→50</div>
-  <p class="why">兩個都從 <b>20%</b> 起跳，但走法不同：<b>竊盜</b>只有兩段（20→50，第三次<b>不賠</b>）；<b>管線</b>有三段（20→30→50，第三次仍賠 50%）。記「竊盜比較狠，第三次直接不理你」。</p>
+  <p class="why">兩個都從 <b>20%</b> 起跳：<b>竊盜</b>兩段（20→50，第三次<b>不賠</b>）；<b>管線</b>三段（20→30→50）。竊盜比較狠，第三次直接不理你。</p>
 </div>
 
 <div class="num-block">
@@ -598,7 +852,7 @@
 <div class="num-block">
   <div class="num-head"><span class="num">65%</span><span class="num-unit">預期損失率</span></div>
   <ul class="items">
-    <li>純保費預期損失率 65%（附加費用率 35%，兩者相加剛好 100%）</li>
+    <li>純保費預期損失率 65%（附加費用率 35%，相加剛好 100%）</li>
     <li>汽車竊盜損失險預期損失率也是 65%</li>
   </ul>
 </div>
@@ -619,8 +873,8 @@
   <ul class="items">
     <li>滿 1 年未滿 2 年 → −0.05</li>
     <li>滿 2 年未滿 3 年 → −0.10</li>
-    <li>滿 3 年以上 → −0.15（封頂，不再往上）</li>
-    <li>記法：<b>5、10、15</b>，等差遞增；車越舊價值越低，折扣越多</li>
+    <li>滿 3 年以上 → −0.15（封頂）</li>
+    <li>記法：<b>5、10、15</b>；車越舊價值越低，折扣越多</li>
   </ul>
 </div>
 
@@ -633,15 +887,24 @@
   </ul>
 </div>
 
+<div class="num-block">
+  <div class="num-head"><span class="num">20 / 22</span><span class="num-unit">%（車險其他）</span></div>
+  <ul class="items">
+    <li>貨物運送人責任險：<b>非貨櫃</b>運送，貨物部分保費加收 <b>20%</b></li>
+    <li><b>進口</b>汽車零配件被竊：保費＝保額 <b>0.25%</b>（不低於 2,000 元）</li>
+    <li>車隊條款：損失率 30.1~40% → <b>−14%</b>；損失率 >150.1% → <b>+16%</b></li>
+  </ul>
+</div>
+
 <a class="top" href="#top">↑ 回頂端</a>
 
 <!-- ===== 級距 ===== -->
-<h2 id="levels">九、級距與分類數</h2>
+<h2 id="levels">十、級距與分類數</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
   <div class="chant">電梯3 · 地震4 · 公意6 · 責任19</div>
-  <p class="why">電<b>梯</b> 3 類、擴大地<b>震</b>險全國 4 區、<b>公</b>共意外責任險 6 類、第三人<b>責</b>任險賠款紀錄 19 級。由小排到大念一次就順。</p>
+  <p class="why">電<b>梯</b> 3 類、擴大地<b>震</b>險 4 區、<b>公</b>共意外責任險 6 類、第三人<b>責</b>任險賠款紀錄 19 級。</p>
 </div>
 
 <div class="num-block">
@@ -658,9 +921,9 @@
 <div class="num-block">
   <div class="num-head"><span class="num">1/2 · 1/4</span><span class="num-unit">未滿期準備金</span></div>
   <ul class="items">
-    <li>保險期間 <b>1 年期</b> → 不得低於最近 12 個月純保費的 <b>1/2</b></li>
-    <li>保險期間 <b>1～2 年期</b> → 不得低於 <b>1/4</b></li>
-    <li>記法：<b>一年一半、兩年四分一</b>（年期加倍，比例減半）</li>
+    <li><b>1 年期</b> → 不得低於最近 12 個月純保費的 <b>1/2</b></li>
+    <li><b>1～2 年期</b> → 不得低於 <b>1/4</b></li>
+    <li>記法：<b>一年一半、兩年四分一</b></li>
   </ul>
 </div>
 
@@ -682,7 +945,7 @@
 <a class="top" href="#top">↑ 回頂端</a>
 
 <!-- ===== 民國年 ===== -->
-<h2 id="years">十、民國年份</h2>
+<h2 id="years">十一、民國年份</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
@@ -698,7 +961,7 @@
     <li>88/1/1 → 強制<b>機車</b>險實施</li>
     <li>91/4/1 → 費率自由化第一階段</li>
     <li>94/4/1 → 第二階段</li>
-    <li>98/1/1 → 第三階段</li>
+    <li>98/1/1 → 第三階段（綜合率 >110% 須報主管機關）</li>
     <li>102/3/1 → 強制險最近一次費率調整</li>
   </ul>
 </div>
@@ -706,12 +969,12 @@
 <a class="top" href="#top">↑ 回頂端</a>
 
 <!-- ===== 順序 ===== -->
-<h2 id="order">十一、順序題（愛考排序）</h2>
+<h2 id="order">十二、順序題（愛考排序）</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
   <div class="chant">業 · 醫 · 核 · 調</div>
-  <p class="why">危險選擇四道關卡順序：<b>業</b>務員（第一線最重要）→ 體檢<b>醫</b>師 → <b>核</b>保人員 → 保險<b>調</b>查員。照「接觸客戶的先後」排就對了。</p>
+  <p class="why">危險選擇四道關卡：<b>業</b>務員（第一線最重要）→ 體檢<b>醫</b>師 → <b>核</b>保人員 → 保險<b>調</b>查員。照「接觸客戶的先後」排。</p>
 </div>
 
 <div class="num-block">
@@ -719,8 +982,7 @@
   <ul class="items">
     <li><b>甲式</b>：保最廣（連第三人故意都賠）</li>
     <li><b>乙式</b>：次之</li>
-    <li><b>丙式</b>：只賠<b>車碰車</b></li>
-    <li>記法：甲＞乙＞丙，保費也是這個順序</li>
+    <li><b>丙式</b>：只賠<b>車碰車</b>，且基本自負額為 <b>0</b></li>
   </ul>
 </div>
 
@@ -733,13 +995,14 @@
 </div>
 
 <div class="trap">
-  <b>方向性易錯：</b>「終止」是<b>往後</b>失效、「解除」是<b>溯及</b>訂約日自始無效。記法：<b>終</b>＝到此為止（向後）；<b>解</b>＝解開重來（回到原點）。
+  <b>方向性易錯：</b>「終止」是<b>往後</b>失效、「解除」是<b>溯及</b>訂約日自始無效、「<b>暫行停止</b>」是暫停但可恢復。<br>
+  記法：<b>終</b>＝到此為止；<b>解</b>＝解開重來；<b>停</b>＝按暫停鍵。
 </div>
 
 <a class="top" href="#top">↑ 回頂端</a>
 
 <footer>
-  考前一小時只滑：<b>法源辨識</b> → <b>重點題型</b> → 藍框口訣 → 橘框陷阱
+  考前一小時只滑：<b>法源辨識</b> → <b>汽車保險</b> → 藍框／綠框口訣 → 橘框陷阱
 </footer>
 
 </body>
