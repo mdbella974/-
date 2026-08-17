@@ -110,6 +110,135 @@
 
   footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-align:center;}
   .top{display:block;text-align:center;margin-top:12px;font-size:14px;color:var(--accent);text-decoration:none;font-weight:600;}
+
+  /* ═══ 工具列 ═══ */
+  .tools{position:sticky;top:0;z-index:60;margin:0 -14px 6px;padding:8px 12px 9px;
+    background:rgba(245,246,248,.93);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);}
+  .tools-row{display:flex;gap:7px;align-items:center;}
+  .sbox{flex:1;position:relative;display:flex;align-items:center;}
+  .sbox svg{position:absolute;left:10px;width:15px;height:15px;stroke:var(--sub);fill:none;stroke-width:2;pointer-events:none;}
+  #q{width:100%;padding:9px 32px 9px 31px;font-size:15px;border:1px solid var(--line);
+    border-radius:11px;background:var(--card);color:var(--ink);
+    font-family:inherit;outline:none;-webkit-appearance:none;}
+  #q:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+  #clr{position:absolute;right:6px;width:22px;height:22px;border:0;border-radius:50%;
+    background:var(--line);color:var(--sub);font-size:14px;line-height:1;cursor:pointer;display:none;}
+  .tbtn{flex:0 0 auto;padding:9px 11px;font-size:13px;font-weight:700;border:1px solid var(--line);
+    border-radius:11px;background:var(--card);color:var(--sub);cursor:pointer;font-family:inherit;white-space:nowrap;}
+  .tbtn.on{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .tbtn.quiz.on{background:var(--warn);border-color:var(--warn);}
+  .tbtn.weak.on{background:var(--fire);border-color:var(--fire);}
+  .tbtn.mcq.on{background:#7c3aed;border-color:#7c3aed;color:#fff;}
+  .flipbtn{padding:4px 11px;font-size:12px;font-weight:700;border:1px solid var(--accent);
+    border-radius:20px;background:var(--accent-soft);color:var(--accent);cursor:pointer;
+    font-family:inherit;display:none;}
+  body.quiz .flipbtn{display:inline-block;}
+  .sec.flip-open .flipbtn{background:var(--accent);color:#fff;}
+
+  /* ═══ 選擇題測驗 overlay ═══ */
+  #mcqOverlay{position:fixed;inset:0;z-index:200;background:var(--bg);display:none;
+    overflow-y:auto;-webkit-overflow-scrolling:touch;}
+  #mcqOverlay.open{display:block;}
+  .mcq-wrap{max-width:640px;margin:0 auto;padding:14px 16px 60px;}
+  .mcq-top{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 0;position:sticky;top:0;background:var(--bg);z-index:2;}
+  .mcq-top .mclose{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+    background:var(--card);font-size:18px;color:var(--sub);cursor:pointer;}
+  .mcq-prog{font-size:13px;color:var(--sub);font-weight:700;}
+  .mcq-score{font-size:13px;font-weight:800;color:#7c3aed;}
+  .mcq-bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin:2px 0 18px;}
+  .mcq-bar>i{display:block;height:100%;background:#7c3aed;border-radius:4px;transition:width .25s;}
+  .mcq-stem{font-size:17px;font-weight:700;line-height:1.55;margin:0 0 18px;color:var(--ink);}
+  .mcq-stem .src{display:block;font-size:12.5px;font-weight:600;color:var(--sub);margin-bottom:5px;}
+  .mcq-opt{display:block;width:100%;text-align:left;padding:13px 14px;margin-bottom:10px;
+    border:1.5px solid var(--line);border-radius:12px;background:var(--card);
+    font-family:inherit;font-size:15.5px;color:var(--ink);cursor:pointer;line-height:1.5;}
+  .mcq-opt b.mk{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;
+    border-radius:50%;background:var(--bg);color:var(--sub);font-size:12.5px;margin-right:9px;font-weight:800;}
+  .mcq-opt.correct{border-color:#0e9f6e;background:#e9faf1;}
+  .mcq-opt.correct b.mk{background:#0e9f6e;color:#fff;}
+  .mcq-opt.wrong{border-color:var(--warn);background:var(--warn-soft);}
+  .mcq-opt.wrong b.mk{background:var(--warn);color:#fff;}
+  .mcq-opt[disabled]{cursor:default;}
+  .mcq-next{width:100%;padding:13px;border:0;border-radius:12px;background:#7c3aed;
+    color:#fff;font-size:15.5px;font-weight:700;font-family:inherit;cursor:pointer;
+    display:none;margin-top:4px;}
+  .mcq-next.show{display:block;}
+  .mcq-start,.mcq-end{text-align:center;padding:40px 6px;}
+  .mcq-start h2,.mcq-end h2{border:0;padding:0;font-size:21px;margin:0 0 8px;}
+  .mcq-start p,.mcq-end p{color:var(--sub);font-size:14px;line-height:1.6;margin:0 0 22px;}
+  .mcq-bigbtn{display:block;width:100%;padding:14px;border:0;border-radius:13px;
+    background:#7c3aed;color:#fff;font-size:16px;font-weight:800;font-family:inherit;
+    cursor:pointer;margin-bottom:10px;}
+  .mcq-bigbtn.ghost{background:var(--card);color:var(--sub);border:1px solid var(--line);font-weight:700;}
+  .mcq-scorebig{font-size:44px;font-weight:800;color:#7c3aed;margin:0 0 4px;}
+  .mcq-miss{text-align:left;margin-top:24px;}
+  .mcq-miss h3{font-size:13px;color:var(--sub);border:0;margin:0 0 10px;font-weight:800;}
+  .mcq-misscard{padding:12px 13px;border:1px solid var(--line);border-radius:11px;
+    background:var(--card);margin-bottom:9px;}
+  .mcq-misscard .qs{font-size:13.5px;font-weight:700;margin:0 0 4px;}
+  .mcq-misscard .as{font-size:13px;color:var(--sub);}
+  .mcq-misscard .as b{color:#0e9f6e;}
+  .mcq-misscard .jump{font-size:12px;color:var(--accent);font-weight:700;cursor:pointer;
+    display:inline-block;margin-top:5px;}
+  .mcq-opts-row{display:flex;gap:8px;margin-bottom:6px;}
+  .mcq-opts-row label{flex:1;font-size:13px;padding:8px;border:1px solid var(--line);
+    border-radius:9px;text-align:center;color:var(--sub);cursor:pointer;}
+  .mcq-opts-row input{display:none;}
+  .mcq-opts-row input:checked+span{color:var(--accent);font-weight:800;}
+  .mcq-opts-row label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);}
+  #stat{font-size:12px;color:var(--sub);margin-top:7px;display:none;}
+  #stat b{color:var(--accent);}
+  mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:3px;}
+
+  /* ═══ 章節與進度 ═══ */
+  .sec{scroll-margin-top:64px;}
+  .sec.hide,.part.hide,tr.hide,.hide{display:none !important;}
+  .prog{display:flex;gap:6px;margin:-4px 0 14px;padding-left:2px;}
+  .pbtn{padding:4px 11px;font-size:12px;font-weight:700;border:1px solid var(--line);
+    border-radius:20px;background:var(--card);color:var(--sub);cursor:pointer;font-family:inherit;}
+  .pbtn[data-v="ok"].on{background:var(--car-soft);border-color:#b7e4d1;color:var(--car);}
+  .pbtn[data-v="weak"].on{background:var(--fire-soft);border-color:#f3c2c2;color:var(--fire);}
+  .sec[data-p="ok"] > h2{opacity:.5;}
+  .sec[data-p="weak"] > h2{border-left-width:7px;}
+
+  /* ═══ 測驗模式：只遮數字，逐個點 ═══ */
+  .numblank{cursor:pointer;border-radius:3px;padding:0 1px;}
+  body.quiz .numblank:not(.show){
+    color:transparent !important;background:repeating-linear-gradient(
+      -45deg,#dfe3e8,#dfe3e8 3px,#e9edf1 3px,#e9edf1 6px);
+    user-select:none;}
+  body.quiz .numblank.show{background:#fffbe8;color:inherit !important;}
+  .qhint{display:none;font-size:12.5px;color:var(--warn);background:var(--warn-soft);
+    border:1px dashed #f6d3bc;border-radius:9px;padding:7px 10px;margin:0 0 12px;}
+  body.quiz .qhint{display:block;}
+
+  /* ═══ 導覽抽屜 ═══ */
+  details.navwrap{margin:10px 0 4px;}
+  details.navwrap>summary{list-style:none;cursor:pointer;padding:8px 12px;background:var(--card);
+    border:1px solid var(--line);border-radius:11px;font-size:13.5px;font-weight:700;color:var(--accent);}
+  details.navwrap>summary::-webkit-details-marker{display:none;}
+  details.navwrap>summary::after{content:" ▾";}
+  details.navwrap[open]>summary::after{content:" ▴";}
+
+  /* ═══ 手機 ═══ */
+  .tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 14px;}
+  .tblwrap table.t{margin-bottom:0;min-width:100%;}
+  @media (max-width:600px){
+    body{font-size:16px;padding:0 11px 50px;}
+    h1{font-size:20px;} h2{font-size:17.5px;} h3{font-size:15px;}
+    .tools{margin:0 -11px 6px;padding:7px 10px 8px;}
+    nav a{min-width:64px;font-size:12.5px;padding:7px 4px;}
+    table.t th,table.t td{padding:7px 8px;font-size:14px;}
+    .tblwrap table.t{min-width:max-content;}
+    .chant{font-size:17px !important;}
+  }
+  @media (min-width:900px){
+    body{max-width:860px;margin:0 auto;}
+    .tools{margin:0 -20px 6px;border-radius:0 0 14px 14px;}
+  }
+
 </style>
 </head>
 <body>
@@ -119,6 +248,23 @@
   <p class="lede">表格查數字 · 卡片講觀念 · 藍綠框記口訣 · 橘框防陷阱</p>
 </header>
 
+<div class="tools">
+  <div class="tools-row">
+    <label class="sbox">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="搜尋關鍵字…例：自負額、重置成本" autocomplete="off">
+      <button id="clr" type="button" aria-label="清除">×</button>
+    </label>
+  </div>
+  <div class="tools-row" style="margin-top:7px;">
+    <button id="mcqBtn" class="tbtn mcq" type="button" style="flex:1;">📝 選擇題測驗</button>
+    <button id="quizBtn" class="tbtn quiz" type="button" style="flex:1;">🔢 遮數字自測</button>
+    <button id="weakBtn" class="tbtn weak" type="button">◎ 待加強</button>
+  </div>
+  <div id="stat"></div>
+</div>
+
+<details class="navwrap"><summary>章節目錄（<span id="pcount">載入中…</span>）</summary>
 <nav>
   <a class="hot" href="#lawsrc">法源起算</a>
   <a class="hot" href="#terms">名詞定義</a>
@@ -148,7 +294,12 @@
   <a href="#levels">級距</a>
   <a href="#years">民國年</a>
   <a href="#judge">判斷題</a>
-</nav>
+</nav></details>
+
+<div class="qhint">🔢 <b>遮數字自測</b>：文字都看得到，只有數字被蓋住，點該數字就顯示。想整節一起看，按章節標題旁的「這節數字全顯示」。<br>📝 <b>選擇題測驗</b>：直接練四選一，答錯自動收進本輪複習清單。</div>
+
+<div id="mcqOverlay"><div class="mcq-wrap" id="mcqBody"></div></div>
+
 
 <!-- ══════ PART 1 ══════ -->
 <div class="part">PART 1 ─ 觀念地基（考前一天讀）</div>
@@ -2019,6 +2170,461 @@
   <b>考前一小時：</b>橘框陷阱 → 口訣框 → PART 5 數字速查<br>
   <b>時間不夠就放掉：</b>PART 4 的運輸與工程險
 </footer>
+
+<script>
+(function(){
+var KEY='pc-notes-progress-v1';
+var body=document.body, prog={};
+
+/* ─── 1. 把 h2 之後的兄弟節點包成 section ─── */
+var secs=[];
+document.querySelectorAll('h2[id]').forEach(function(h){
+  var sec=document.createElement('section');
+  sec.className='sec'; sec.dataset.id=h.id;
+  h.parentNode.insertBefore(sec,h);
+  var n=h;
+  while(n && !(n.tagName==='H2'&&n!==h) && !n.classList?.contains('part') && n.tagName!=='FOOTER'){
+    var nx=n.nextSibling; sec.appendChild(n); n=nx;
+    if(n&&n.nodeType===1&&(n.tagName==='H2'||n.classList.contains('part')||n.tagName==='FOOTER'))break;
+  }
+  secs.push(sec);
+});
+
+/* ─── 2. 表格加橫向捲動容器 ─── */
+document.querySelectorAll('table.t').forEach(function(t){
+  var w=document.createElement('div'); w.className='tblwrap';
+  t.parentNode.insertBefore(w,t); w.appendChild(t);
+});
+
+/* ─── 3. 只遮數字：把答案格裡的數字各自包成可點的小方塊 ─── */
+var NUM_RE = /\d+\/\d+\/\d+|\d+\/\d+|\d{1,3}(?:,\d{3})*(?:\.\d+)?(?:\s*(?:個工作日|工作日|個月|小時|日內|日前|日後|日|天內|天|年內|年後|年|級|區|類|人|次|倍|坪|萬元|億元|千元|萬|億|千|元|%))?/g;
+function wrapNumbers(root){
+  var walker=document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  var nodes=[], n;
+  while(n=walker.nextNode()){ if(/\d/.test(n.nodeValue)) nodes.push(n); }
+  nodes.forEach(function(nd){
+    var text=nd.nodeValue;
+    NUM_RE.lastIndex=0;
+    var m, last=0, frag=document.createDocumentFragment(), found=false;
+    while((m=NUM_RE.exec(text))){
+      if(m[0].length===0){ NUM_RE.lastIndex++; continue; }
+      found=true;
+      if(m.index>last) frag.appendChild(document.createTextNode(text.slice(last,m.index)));
+      var sp=document.createElement('span');
+      sp.className='numblank'; sp.textContent=m[0];
+      frag.appendChild(sp);
+      last=m.index+m[0].length;
+    }
+    if(!found) return;
+    if(last<text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+    nd.replaceWith(frag);
+  });
+}
+secs.forEach(function(sec){
+  sec.querySelectorAll('table.t').forEach(function(t){
+    t.querySelectorAll('tr').forEach(function(tr){
+      if(tr.querySelector('th'))return;
+      var td=tr.querySelectorAll('td');
+      if(td.length<2)return;
+      for(var i=1;i<td.length;i++) wrapNumbers(td[i]);
+    });
+  });
+  sec.querySelectorAll('.q-ans').forEach(function(e){ wrapNumbers(e); });
+});
+function setFlip(sec,open){
+  sec.classList.toggle('flip-open',open);
+  sec.querySelectorAll('.numblank').forEach(function(x){x.classList.toggle('show',open);});
+  var fb=sec.querySelector('.flipbtn');
+  if(fb) fb.textContent = open? '🙈 全部遮回去' : '👀 這節數字全顯示';
+}
+document.addEventListener('click',function(e){
+  if(!body.classList.contains('quiz'))return;
+  if(e.target.closest('.flipbtn'))return; /* 由專屬按鈕自己處理 */
+  var nb=e.target.closest('.numblank');
+  if(nb){ nb.classList.toggle('show'); return; }
+});
+
+/* ─── 4. 進度列 ＋ 翻牌按鈕 ─── */
+secs.forEach(function(sec){
+  var bar=document.createElement('div'); bar.className='prog';
+
+  var flip=document.createElement('button');
+  flip.className='flipbtn'; flip.type='button'; flip.textContent='👀 這節數字全顯示';
+  flip.onclick=function(){ setFlip(sec, !sec.classList.contains('flip-open')); };
+  bar.appendChild(flip);
+
+  [['ok','✓ 熟了'],['weak','◎ 待加強']].forEach(function(p){
+    var b=document.createElement('button');
+    b.className='pbtn'; b.dataset.v=p[0]; b.textContent=p[1];
+    b.onclick=function(){
+      var cur=prog[sec.dataset.id];
+      prog[sec.dataset.id] = (cur===p[0]) ? null : p[0];
+      paint(); save();
+    };
+    bar.appendChild(b);
+  });
+  sec.querySelector('h2').insertAdjacentElement('afterend',bar);
+});
+function paint(){
+  secs.forEach(function(sec){
+    var v=prog[sec.dataset.id]||'';
+    sec.dataset.p=v;
+    sec.querySelectorAll('.pbtn').forEach(function(b){
+      b.classList.toggle('on', b.dataset.v===v);
+    });
+  });
+  var w=secs.filter(function(s){return prog[s.dataset.id]==='weak';}).length;
+  var o=secs.filter(function(s){return prog[s.dataset.id]==='ok';}).length;
+  document.getElementById('weakBtn').textContent = w? ('◎ 待加強 '+w) : '◎ 待加強';
+  var pc=document.getElementById('pcount');
+  if(pc)pc.textContent = o+' 熟 · '+w+' 待加強 · 共 '+secs.length+' 節';
+}
+/* 儲存策略：localStorage 優先（GitHub／自架時就是靠這個），
+   同時若在 Claude artifact 沙盒環境下偵測到 window.storage，
+   也順手備份一份，兩邊都不影響對方運作。 */
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(prog)); }catch(e){}
+  try{ window.storage && window.storage.set(KEY, JSON.stringify(prog)); }catch(e){}
+}
+(async function(){
+  var loaded=false;
+  try{
+    var local=localStorage.getItem(KEY);
+    if(local){ prog=JSON.parse(local); loaded=true; }
+  }catch(e){}
+  if(!loaded){
+    try{
+      var r=await window.storage.get(KEY);
+      if(r&&r.value){ prog=JSON.parse(r.value); save(); }
+    }catch(e){ prog=prog||{}; }
+  }
+  paint();
+})();
+
+/* ─── 5. 搜尋 ─── */
+var UNITS='tr, .trap, .note, .mnemonic, .q-card, .calc, .tree, .qhint';
+function norm(s){
+  return s.replace(/[，,\s　]/g,'')
+          .replace(/[０-９]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248);})
+          .toLowerCase();
+}
+function expand(qv){
+  var out=[norm(qv)];
+  var m=norm(qv).match(/^(\d+(?:\.\d+)?)(萬|億|千)?$/);
+  if(m){
+    var n=parseFloat(m[1]), u=m[2];
+    if(u==='萬') out.push(String(n*10000), m[1]+'萬');
+    else if(u==='千') out.push(String(n*1000), m[1]+'千');
+    else if(u==='億') out.push(String(n*100000000), m[1]+'億');
+    else{
+      if(n>=10000 && n%10000===0) out.push((n/10000)+'萬');
+      if(n>=1000 && n%1000===0) out.push((n/1000)+'千');
+    }
+  }
+  return out.filter(function(v,i,a){return v&&a.indexOf(v)===i;});
+}
+function clearMarks(root){
+  root.querySelectorAll('span.hl').forEach(function(sp){
+    sp.replaceWith(document.createTextNode(sp.textContent));
+  });
+  root.normalize&&root.normalize();
+}
+function hilite(el,terms){
+  var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null);
+  var nodes=[],n;
+  while(n=w.nextNode()) if(n.nodeValue.trim()) nodes.push(n);
+  nodes.forEach(function(nd){
+    var raw=nd.nodeValue, lo=raw.toLowerCase(), hit=-1, len=0;
+    terms.forEach(function(t){
+      if(t.length<1)return;
+      var i=lo.indexOf(t);
+      if(i>-1&&(hit<0||i<hit)){hit=i;len=t.length;}
+    });
+    if(hit<0)return;
+    var sp=document.createElement('span'); sp.className='hl';
+    sp.appendChild(document.createTextNode(raw.slice(0,hit)));
+    var mk=document.createElement('mark'); mk.textContent=raw.slice(hit,hit+len);
+    sp.appendChild(mk);
+    sp.appendChild(document.createTextNode(raw.slice(hit+len)));
+    nd.replaceWith(sp);
+  });
+}
+var q=document.getElementById('q'), clr=document.getElementById('clr'),
+    stat=document.getElementById('stat'), weakOnly=false, timer;
+
+function run(){
+  var raw=q.value.trim();
+  clr.style.display = raw? 'block':'none';
+  secs.forEach(clearMarks);
+
+  var terms = raw? expand(raw):[];
+  var totalHits=0, shownSecs=0;
+
+  secs.forEach(function(sec){
+    var weakHide = weakOnly && prog[sec.dataset.id]!=='weak';
+    if(!raw){
+      sec.querySelectorAll(UNITS).forEach(function(u){u.classList.remove('hide');});
+      sec.querySelectorAll('.tblwrap').forEach(function(w){w.classList.remove('hide');});
+      sec.classList.toggle('hide', weakHide);
+      if(!weakHide)shownSecs++;
+      return;
+    }
+    var hits=0;
+    var secHit = terms.some(function(t){return norm(sec.textContent).indexOf(t)>-1;});
+    sec.querySelectorAll(UNITS).forEach(function(u){
+      if(u.tagName==='TR' && u.querySelector('th')){u.classList.remove('hide');return;}
+      var txt=norm(u.textContent);
+      var ok=terms.some(function(t){return txt.indexOf(t)>-1;});
+      u.classList.toggle('hide',!ok);
+      if(ok){hits++; hilite(u,terms);}
+    });
+    sec.querySelectorAll('.tblwrap').forEach(function(w){
+      var rows=w.querySelectorAll('tr'), live=0;
+      rows.forEach(function(r){ if(!r.querySelector('th') && !r.classList.contains('hide')) live++; });
+      w.classList.toggle('hide', live===0);
+    });
+    var show = secHit && hits>0 && !weakHide;
+    sec.classList.toggle('hide',!show);
+    if(show){shownSecs++; totalHits+=hits;}
+  });
+
+  document.querySelectorAll('.part').forEach(function(p){
+    var n=p.nextElementSibling, any=false;
+    while(n && !n.classList.contains('part') && n.tagName!=='FOOTER'){
+      if(n.classList.contains('sec') && !n.classList.contains('hide')){any=true;break;}
+      n=n.nextElementSibling;
+    }
+    p.classList.toggle('hide',!any);
+  });
+
+  if(raw){
+    stat.style.display='block';
+    stat.innerHTML = totalHits? ('找到 <b>'+totalHits+'</b> 筆，分布在 <b>'+shownSecs+'</b> 節')
+                              : '沒有結果，換個關鍵字試試';
+  } else if(weakOnly){
+    stat.style.display='block';
+    stat.innerHTML='只顯示標記「待加強」的 <b>'+shownSecs+'</b> 節';
+  } else {
+    stat.style.display='none';
+  }
+}
+q.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(run,140);});
+clr.onclick=function(){q.value='';run();q.focus();};
+
+/* ─── 6. 翻牌／待加強 按鈕 ─── */
+document.getElementById('quizBtn').onclick=function(){
+  body.classList.toggle('quiz');
+  this.classList.toggle('on',body.classList.contains('quiz'));
+  if(!body.classList.contains('quiz'))
+    secs.forEach(function(sec){ setFlip(sec,false); });
+};
+document.getElementById('weakBtn').onclick=function(){
+  weakOnly=!weakOnly; this.classList.toggle('on',weakOnly); run();
+};
+
+/* ══════════════════════════════════════════════════
+   7. 選擇題測驗引擎 — 從表格自動出題
+   ══════════════════════════════════════════════════ */
+var BANK=[];
+function textFrom(el){
+  var c=el.cloneNode(true);
+  c.querySelectorAll('br').forEach(function(br){ br.replaceWith(' '); });
+  return c.textContent.replace(/\s+/g,' ').trim();
+}
+(function buildBank(){
+  var tk=0;
+  document.querySelectorAll('table.t').forEach(function(table){
+    tk++;
+    var cap=table.querySelector('caption');
+    var capText = cap? textFrom(cap) : '';
+    var sec=table.closest('.sec');
+    if(!capText){
+      var node=(table.closest('.tblwrap')||table).previousElementSibling;
+      while(node){
+        if(node.tagName==='H3'){ capText=node.textContent.replace(/^\d+-\d+\s*/,'').trim(); break; }
+        node=node.previousElementSibling;
+      }
+    }
+    var rows=Array.from(table.querySelectorAll('tr'));
+    var headerRow = rows.find(function(r){return r.querySelector('th');});
+    if(!headerRow) return;
+    var ths=Array.from(headerRow.querySelectorAll('th')).map(textFrom);
+    if(ths.length<2) return;
+    var bodyRows = rows.filter(function(r){return r!==headerRow && r.querySelectorAll('td').length>0;});
+    var carry=null;
+    bodyRows.forEach(function(tr){
+      var tds=Array.from(tr.querySelectorAll('td'));
+      var label, values;
+      if(tds.length===ths.length){
+        label=textFrom(tds[0]); values=tds.slice(1);
+        carry=label;
+      } else if(tds.length===ths.length-1 && carry){
+        label=carry; values=tds;
+      } else return;
+      if(!label || label.length>40) return;
+      values.forEach(function(td,j){
+        var ans=textFrom(td).replace(/^[✓✔✅✗✘❌]\s*/,'').replace(/\s*[✓✔✅✗✘❌]$/,'').trim();
+        if(!ans || ans.length>36 || /^(以上皆是|以上皆非|皆非|皆是)$/.test(ans)) return;
+        var head=ths[j+1]||'內容';
+        BANK.push({label:label, answer:ans, head:head, cap:capText, tkey:tk,
+                   secId:sec?sec.dataset.id:'', secTitle:sec?sec.querySelector('h2').textContent:''});
+      });
+    });
+  });
+})();
+
+function bucket(a){
+  if(/%/.test(a)) return 'pct';
+  if(/萬元|億元|萬|億|,\d{3}.*元|^\d[\d,]*\s*元/.test(a)) return 'money';
+  if(/小時/.test(a)) return 'hour';
+  if(/個月/.test(a)) return 'month';
+  if(/日|天/.test(a)) return 'day';
+  if(/(?<!週)年(?!資)/.test(a)) return 'year';
+  if(/人/.test(a)) return 'people';
+  if(/區/.test(a)) return 'zone';
+  if(/級/.test(a)) return 'grade';
+  if(/類/.test(a)) return 'type';
+  return 'other';
+}
+function shuffle(a){
+  a=a.slice();
+  for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; }
+  return a;
+}
+var FILLERS=['以上皆是','以上皆非','須經主管機關另行核准','無強制規定'];
+function makeQuestion(item){
+  var pool=BANK.filter(function(x){return x!==item && x.answer!==item.answer;});
+  var bk=bucket(item.answer);
+  var tier1=shuffle(pool.filter(function(x){return x.tkey===item.tkey;}));
+  var tier2=shuffle(pool.filter(function(x){return x.tkey!==item.tkey && bucket(x.answer)===bk;}));
+  var tier3=shuffle(pool.filter(function(x){return x.tkey!==item.tkey && bucket(x.answer)!==bk;}));
+  var seen={}, uniq=[];
+  tier1.concat(tier2).concat(tier3).forEach(function(c){
+    if(!seen[c.answer]){ seen[c.answer]=1; uniq.push(c.answer); }
+  });
+  var wrong=uniq.slice(0,3);
+  var fi=0;
+  while(wrong.length<3 && fi<FILLERS.length){
+    if(wrong.indexOf(FILLERS[fi])<0 && FILLERS[fi]!==item.answer) wrong.push(FILLERS[fi]);
+    fi++;
+  }
+  var opts=shuffle(wrong.concat([item.answer]));
+  var wrapped = /^[「『"']/.test(item.label) ? item.label : '「'+item.label+'」';
+  return {
+    stem:(item.cap? item.cap+'：':'')+wrapped+'的'+item.head+'為何？',
+    opts:opts, correct:item.answer, secId:item.secId, secTitle:item.secTitle
+  };
+}
+
+var mcqOv=document.getElementById('mcqOverlay'), mcqBody=document.getElementById('mcqBody');
+var round=[], ridx=0, score=0, misses=[];
+
+function openMcq(){ mcqOv.classList.add('open'); document.body.style.overflow='hidden'; renderStart(); }
+function closeMcq(){ mcqOv.classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('mcqBtn').onclick=openMcq;
+
+function renderStart(){
+  var weakSecs=Object.keys(prog).filter(function(k){return prog[k]==='weak';});
+  var weakCount=BANK.filter(function(x){return weakSecs.indexOf(x.secId)>-1;}).length;
+  mcqBody.innerHTML =
+    '<div class="mcq-top"><button class="mclose" id="mcqX">×</button><span class="mcq-prog"></span></div>'+
+    '<div class="mcq-start">'+
+    '<h2>📝 選擇題測驗</h2>'+
+    '<p>題目直接從筆記表格自動出成四選一，答錯的題目最後會列出來複習。<br>題庫目前共 '+BANK.length+' 題可抽。</p>'+
+    '<button class="mcq-bigbtn" id="mcqAll">開始測驗（15 題，全範圍隨機）</button>'+
+    (weakCount>=4? '<button class="mcq-bigbtn ghost" id="mcqWeak">只考「待加強」章節（'+weakCount+' 題可抽）</button>' : '')+
+    '</div>';
+  document.getElementById('mcqX').onclick=closeMcq;
+  document.getElementById('mcqAll').onclick=function(){ startRound(BANK); };
+  var wb=document.getElementById('mcqWeak');
+  if(wb) wb.onclick=function(){
+    startRound(BANK.filter(function(x){return weakSecs.indexOf(x.secId)>-1;}));
+  };
+}
+
+function startRound(pool){
+  var n=Math.min(15,pool.length);
+  var items=shuffle(pool).slice(0,n);
+  round=items.map(makeQuestion);
+  ridx=0; score=0; misses=[];
+  renderQ();
+}
+
+function renderQ(){
+  if(ridx>=round.length){ renderEnd(); return; }
+  var Q=round[ridx];
+  var letters=['A','B','C','D'];
+  mcqBody.innerHTML =
+    '<div class="mcq-top"><button class="mclose" id="mcqX">×</button>'+
+      '<span class="mcq-prog">第 '+(ridx+1)+' / '+round.length+' 題</span>'+
+      '<span class="mcq-score">答對 '+score+'</span></div>'+
+    '<div class="mcq-bar"><i style="width:'+(ridx/round.length*100)+'%"></i></div>'+
+    '<div class="mcq-stem"><span class="src">'+Q.secTitle+'</span>'+Q.stem+'</div>'+
+    '<div id="mcqOpts"></div>'+
+    '<button class="mcq-next" id="mcqNext">下一題</button>';
+  document.getElementById('mcqX').onclick=closeMcq;
+  var wrap=document.getElementById('mcqOpts');
+  Q.opts.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='mcq-opt'; b.type='button';
+    b.innerHTML='<b class="mk">'+letters[i]+'</b>'+opt;
+    b.onclick=function(){ answer(opt,b); };
+    wrap.appendChild(b);
+  });
+  document.getElementById('mcqNext').onclick=function(){ ridx++; renderQ(); };
+}
+function answer(opt,btn){
+  var Q=round[ridx];
+  var all=document.querySelectorAll('#mcqOpts .mcq-opt');
+  all.forEach(function(b){ b.disabled=true; });
+  var ok = opt===Q.correct;
+  if(ok){ btn.classList.add('correct'); score++; }
+  else{
+    btn.classList.add('wrong');
+    all.forEach(function(b){ if(b.textContent.replace(/^[A-D]/,'')===Q.correct || b===findCorrectBtn(all,Q)) {} });
+    var cb=findCorrectBtn(all,Q); if(cb) cb.classList.add('correct');
+    misses.push(Q);
+  }
+  document.getElementById('mcqNext').classList.add('show');
+}
+function findCorrectBtn(all,Q){
+  for(var i=0;i<all.length;i++){
+    if(all[i].textContent.indexOf(Q.correct)>-1) return all[i];
+  }
+  return null;
+}
+function renderEnd(){
+  var pct=Math.round(score/round.length*100);
+  var msg = pct>=85? '很穩，保持這個節奏。' : pct>=65? '接近了，把錯的題目再看一次。' : '這輪抓到不少弱點，正好利用錯題複習。';
+  mcqBody.innerHTML =
+    '<div class="mcq-top"><button class="mclose" id="mcqX">×</button><span class="mcq-prog"></span></div>'+
+    '<div class="mcq-end">'+
+    '<div class="mcq-scorebig">'+score+' / '+round.length+'</div>'+
+    '<p>'+msg+'</p>'+
+    '<button class="mcq-bigbtn" id="mcqAgain">再考一輪（重新抽題）</button>'+
+    '<button class="mcq-bigbtn ghost" id="mcqBack">回開始畫面</button>'+
+    (misses.length? '<div class="mcq-miss"><h3>本輪錯了 '+misses.length+' 題</h3></div>' : '')+
+    '</div>';
+  document.getElementById('mcqX').onclick=closeMcq;
+  document.getElementById('mcqAgain').onclick=renderStart;
+  document.getElementById('mcqBack').onclick=renderStart;
+  var box=mcqBody.querySelector('.mcq-miss');
+  if(box){
+    misses.forEach(function(Q){
+      var c=document.createElement('div'); c.className='mcq-misscard';
+      c.innerHTML='<p class="qs">'+Q.stem+'</p><p class="as">正解：<b>'+Q.correct+'</b></p>'+
+        '<span class="jump">回筆記看這節 →</span>';
+      c.querySelector('.jump').onclick=function(){
+        closeMcq();
+        var el=document.getElementById(Q.secId);
+        if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      };
+      box.appendChild(c);
+    });
+  }
+}
+})();
+</script>
 
 </body>
 </html>
