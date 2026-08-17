@@ -12,6 +12,7 @@
     --law:#6d28d9; --law-soft:#f3edff;
     --car:#047857; --car-soft:#e8f7f1;
     --fire:#b91c1c; --fire-soft:#fdeeee;
+    --misc:#a16207; --misc-soft:#fdf6e3;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   body{margin:0;padding:0 14px 60px;background:var(--bg);color:var(--ink);
@@ -27,6 +28,7 @@
   nav a.hot{background:#fff4ed;border-color:#f6d3bc;color:var(--warn);}
   nav a.carnav{background:var(--car-soft);border-color:#b7e4d1;color:var(--car);}
   nav a.firenav{background:var(--fire-soft);border-color:#f3c2c2;color:var(--fire);}
+  nav a.miscnav{background:var(--misc-soft);border-color:#eddcae;color:var(--misc);}
 
   .part{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--sub);
     margin:34px 0 -4px;padding-left:2px;}
@@ -34,6 +36,7 @@
   h2.law-h{border-left-color:var(--law);}
   h2.car-h{border-left-color:var(--car);}
   h2.fire-h{border-left-color:var(--fire);}
+  h2.misc-h{border-left-color:var(--misc);}
   h3{font-size:16px;margin:24px 0 8px;color:#37414d;padding-bottom:4px;border-bottom:1px dashed var(--line);}
 
   .mnemonic{background:var(--accent-soft);border:1px solid #c8dbfa;border-radius:14px;padding:13px 16px;margin:12px 0 16px;}
@@ -48,6 +51,10 @@
   .mnemonic.fire-m .tag{background:var(--fire);}
   .mnemonic.fire-m .chant{color:#7f1d1d;}
   .mnemonic.fire-m .why{color:#7c2f2f;}
+  .mnemonic.misc-m{background:var(--misc-soft);border-color:#eddcae;}
+  .mnemonic.misc-m .tag{background:var(--misc);}
+  .mnemonic.misc-m .chant{color:#78350f;}
+  .mnemonic.misc-m .why{color:#6b4d16;}
 
   .trap{background:var(--warn-soft);border:1px solid #f6d3bc;border-left:4px solid var(--warn);
     border-radius:10px;padding:11px 14px;margin:12px 0 18px;font-size:14.5px;color:#7c2d12;}
@@ -70,6 +77,8 @@
   table.t.green td b{color:#046c4e;}
   table.t.red th{background:#fbdede;color:#7f1d1d;}
   table.t.red td b{color:#b91c1c;}
+  table.t.orange th{background:#faedcd;color:#78350f;}
+  table.t.orange td b{color:#a16207;}
   table.t tr.hl td{background:#fff8e6;font-weight:700;}
   table.t.center td{text-align:center;}
   table.t.center td:first-child{text-align:left;}
@@ -113,6 +122,9 @@
 <nav>
   <a class="hot" href="#lawsrc">法源起算</a>
   <a class="hot" href="#terms">名詞定義</a>
+  <a class="hot" href="#risk">危險分類</a>
+  <a class="hot" href="#contract">契約性質</a>
+  <a class="hot" href="#broker">輔助人</a>
   <a class="carnav" href="#map">車險架構</a>
   <a class="carnav" href="#others">賠別人</a>
   <a class="carnav" href="#own">賠自己</a>
@@ -125,6 +137,9 @@
   <a class="firenav" href="#firerate">火險費率</a>
   <a class="firenav" href="#fireterm">火險期限</a>
   <a class="firenav" href="#firenum">火險數字</a>
+  <a class="miscnav" href="#pahealth">傷害健康</a>
+  <a class="miscnav" href="#liability">責任險</a>
+  <a class="miscnav" href="#marineeng">運輸工程</a>
   <a href="#days">天數</a>
   <a href="#hours">小時</a>
   <a href="#months">月與年</a>
@@ -253,10 +268,160 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
+<h2 id="risk">三、危險與損失的分類</h2>
+
+<div class="trap">
+  <b>這一節全是「兩兩對比」題。</b>選項通常把四個近義詞擺一起，只要抓住每組的<b>那一句分辨語</b>就能刷掉三個。
+</div>
+
+<div class="mnemonic">
+  <span class="tag">口訣</span>
+  <div class="chant">純損可保 · 投機不保</div>
+  <p class="why"><b>純損</b>危險只會「賠或不賠」，不會賺 → 可保。<b>投機</b>危險有賺有賠（炒股、賭博、創業）→ <b>不可保</b>，因為保險不能讓人有機會獲利。</p>
+</div>
+
+<table class="t purple">
+  <caption>四組必背對比</caption>
+  <tr><th>分類</th><th>兩邊</th><th>怎麼分</th></tr>
+  <tr class="hl"><td>危險種類</td><td><b>純損</b> ／ <b>投機</b></td><td>會不會有<b>賺</b>的可能——會賺的不可保</td></tr>
+  <tr><td>損失種類</td><td><b>直接</b> ／ <b>從屬</b></td><td>火燒掉機器＝直接；<b>停工少賺的錢</b>＝從屬（附帶）</td></tr>
+  <tr class="hl"><td>危險因素</td><td><b>實質</b> ／ <b>道德</b> ／ <b>疏忽</b></td><td>房子是木造＝實質；<b>故意</b>縱火＝道德；明知漏電<b>不在乎</b>＝疏忽</td></tr>
+  <tr><td>衡量指標</td><td><b>頻率</b> ／ <b>幅度</b></td><td>頻率＝理賠次數÷保險單位數；幅度＝損失總額÷理賠次數</td></tr>
+</table>
+<div class="note">
+  <b>道德 vs 疏忽的一句話：</b>道德危險是「<b>故意製造</b>損失」，疏忽（怠忽）危險是「<b>無所謂、放著不管</b>」。前者主動、後者被動。
+</div>
+
+<div class="mnemonic">
+  <span class="tag">口訣</span>
+  <div class="chant">避 · 防 · 抑 · 留 · 轉</div>
+  <p class="why">危險管理五招：<b>避</b>免、<b>預防</b>、<b>抑</b>制、自<b>留</b>、<b>轉</b>嫁。實務上的<b>最佳組合＝損失自留＋保險轉嫁</b>（小損失自己吞、大損失丟給保險）。</p>
+</div>
+
+<table class="t purple">
+  <tr><th>措施</th><th>時點</th><th>例子</th></tr>
+  <tr><td>避免</td><td>根本不做</td><td>乾脆不蓋工廠</td></tr>
+  <tr class="hl"><td><b>預防</b></td><td><b>事故前</b>：降低發生機率</td><td>全面禁菸、定期保養</td></tr>
+  <tr class="hl"><td><b>抑制</b></td><td><b>事故後</b>：阻止損失擴大</td><td>自動灑水器、防火門</td></tr>
+  <tr><td>自留</td><td>自己承擔</td><td>自負額、提列準備金</td></tr>
+  <tr><td>轉嫁</td><td>丟給別人</td><td><b>買保險</b></td></tr>
+</table>
+<div class="note"><b>預防和抑制最常互換：</b>灑水器不能阻止火災「發生」，只能阻止火勢「擴大」→ 所以是<b>抑制</b>。</div>
+
+<a class="top" href="#top">↑ 回頂端</a>
+
+<h2 id="contract">四、保險契約的性質與型態</h2>
+
+<div class="mnemonic">
+  <span class="tag">口訣</span>
+  <div class="chant">射 · 附 · 償 · 誠 · 人</div>
+  <p class="why">保險契約五性質：<b>射</b>倖、<b>附</b>合、有<b>償</b>、最大<b>誠</b>信、對<b>人</b>。</p>
+</div>
+
+<table class="t purple">
+  <caption>五大性質 — 一句話版本</caption>
+  <tr><th>性質</th><th>意思</th></tr>
+  <tr><td><b>射倖</b>契約</td><td>訂約時<b>不知道</b>事故會不會發生（像下注，但保險是為了填補損失）</td></tr>
+  <tr><td><b>附合</b>契約</td><td>條款是保險公司擬好的，客戶<b>只能接受或不接受</b>，不能逐條談</td></tr>
+  <tr><td><b>有償</b>契約</td><td>你繳保費、我負賠償責任，<b>雙方都有給付</b>（又稱<b>附條件</b>：要備齊文件才能請領）</td></tr>
+  <tr><td><b>最大誠信</b>契約</td><td>訂約時要保人有<b>據實告知</b>義務</td></tr>
+  <tr class="hl"><td><b>對人</b>契約</td><td>核保不只看「東西」，還要看<b>人</b>的背景（財務、品行）才決定承保條件</td></tr>
+</table>
+<div class="note"><b>火險是「不定值＋對人」契約</b>——這兩個標籤常一起考。</div>
+
+<h3>4-1　定值 vs 不定值</h3>
+
+<table class="t purple">
+  <tr><th></th><th>定值保險</th><th>不定值保險</th></tr>
+  <tr><td>價值</td><td><b>事先約定</b>好</td><td>出險時<b>再估價</b></td></tr>
+  <tr><td>用在哪</td><td>藝術品、古董、<b>海上（水險）</b></td><td><b>一般財產險、火險</b></td></tr>
+  <tr><td>為什麼</td><td>市價<b>不易估計</b>，事後吵不完</td><td>市價查得到，照實際價值賠</td></tr>
+</table>
+
+<h3>4-2　超額保險與複保險（善意／惡意兩套答案）</h3>
+
+<div class="mnemonic">
+  <span class="tag">通則</span>
+  <div class="chant">善意 → 比例分攤<br>惡意 → 契約無效</div>
+  <p class="why">只要沾到「<b>意圖不當得利</b>」四個字，答案一律是<b>無效</b>。沒有惡意就退回到<b>損害填補原則</b>處理。</p>
+</div>
+
+<table class="t purple">
+  <tr><th>情形</th><th>善意</th><th>惡意／意圖不當得利</th></tr>
+  <tr><td><b>超額保險</b>（保額 &gt; 價值）</td><td>在<b>標的價值內</b>有效，按比例負擔</td><td><b>無效</b></td></tr>
+  <tr class="hl"><td><b>複保險</b>（同一利益、同一事故、不同契約）</td><td>比照足額，各保險人<b>比例分攤</b></td><td><b>無效</b></td></tr>
+</table>
+<div class="note">
+  <b>複保險的定義三要件：</b>同一<b>利益</b>、同一<b>事故</b>、<b>不同</b>契約。少一個都不算。<br>
+  易混：<b>共保</b>＝多家保險人共同承保<b>同一張</b>保單；<b>再保</b>＝保險人把自己的責任再轉嫁給<b>再保險人</b>。
+</div>
+
+<h3>4-3　自負額的兩種型態</h3>
+
+<table class="t purple">
+  <tr><th>型態</th><th>規則</th><th>損失 8 萬、自負額 5 萬</th></tr>
+  <tr class="hl"><td><b>扣減式</b></td><td>永遠<b>扣掉</b>自負額</td><td>賠 <b>3 萬</b></td></tr>
+  <tr class="hl"><td><b>起賠式</b></td><td>超過門檻就<b>全額賠</b>；沒超過完全不賠</td><td>賠 <b>8 萬</b>（全額）</td></tr>
+</table>
+<div class="note"><b>記法：</b>扣減式是「<b>減</b>」、起賠式是「<b>起</b>跑線」——過了線就全給。</div>
+
+<h3>4-4　告知義務與契約效力</h3>
+
+<table class="t purple">
+  <tr><th>情形</th><th>結果</th></tr>
+  <tr><td>違反告知，致保險人<b>無法正確估計危險</b></td><td>保險人得<b>解除</b>契約</td></tr>
+  <tr class="hl"><td>解除權行使期間</td><td>知有原因後 <b>1 個月</b>內／訂約後 <b>2 年</b>內</td></tr>
+  <tr><td>解除後保費</td><td>保險人<b>無需返還</b></td></tr>
+  <tr><td>危險發生後才發現</td><td><b>仍得解除</b></td></tr>
+  <tr class="hl"><td>訂約時危險<b>已發生或已消滅</b></td><td>契約<b>無效</b>（但<b>雙方均不知</b>者不在此限）</td></tr>
+  <tr><td><b>批單</b>（批註條款）</td><td>效力<b>優於</b>原契約；用途<b>不是</b>證明保險存在</td></tr>
+  <tr><td><b>不能</b>行使代位求償</td><td><b>人身／傷害保險</b>（人命無法用錢衡量，不能替代求償）</td></tr>
+</table>
+<div class="note">「訂約後 2 年」是天花板：<b>就算真的隱瞞，滿 2 年保險公司也不能再解約</b>。</div>
+
+<a class="top" href="#top">↑ 回頂端</a>
+
+<h2 id="broker">五、保險輔助人與監理</h2>
+
+<div class="mnemonic">
+  <span class="tag">口訣</span>
+  <div class="chant">經紀可兼 · 代理公證擇一</div>
+  <p class="why"><b>經紀人</b>可同時兼營產險與壽險；<b>代理人</b>和<b>公證人</b>只能擇一。經紀人站在客戶這邊，代理人站在保險公司那邊。</p>
+</div>
+
+<table class="t purple">
+  <caption>保險經紀人保證金與責任險</caption>
+  <tr><th>身分</th><th>金額</th></tr>
+  <tr class="hl"><td>個人執業 — <b>保證金</b></td><td><b>10 萬元</b></td></tr>
+  <tr class="hl"><td>個人執業 — <b>責任保險</b></td><td><b>100 萬元</b></td></tr>
+  <tr class="hl"><td><b>公司</b>組織 — 責任保險</td><td><b>200 萬元</b></td></tr>
+</table>
+<div class="note">記法：<b>10 → 100 → 200</b>，個人保證金最小，公司責任險最大（公司做的生意大，賠得起才行）。</div>
+
+<table class="t purple">
+  <caption>監理與制度</caption>
+  <tr><th>項目</th><th>內容</th></tr>
+  <tr><td><b>台灣</b>採用的監督方式</td><td><b>實體監督</b>主義</td></tr>
+  <tr><td>高度發展國家</td><td><b>公示</b>主義（資訊揭露，讓市場自己判斷）</td></tr>
+  <tr class="hl"><td><b>安定基金</b>設立目的</td><td>保障<b>被保險人權益</b>、維護<b>金融安定</b></td></tr>
+</table>
+
+<table class="t purple">
+  <caption>洗錢防制</caption>
+  <tr><th>項目</th><th>規定</th></tr>
+  <tr><td>刑度／罰金</td><td><b>5 年</b>以下有期徒刑、<b>50 萬元</b>以下罰金</td></tr>
+  <tr class="hl"><td><b>大額</b>通貨交易申報</td><td><b>5 個營業日</b>內</td></tr>
+  <tr class="hl"><td><b>疑似</b>洗錢交易申報</td><td><b>10 個營業日</b>內</td></tr>
+  <tr><td>申報對象</td><td>法務部<b>調查局</b>（洗錢防制處）</td></tr>
+</table>
+<div class="note">記法：<b>大額 5、疑似 10</b>——大額交易是機械認定，看到就報；疑似需要判斷分析，給多一倍時間。</div>
+
+<a class="top" href="#top">↑ 回頂端</a>
+
 <!-- ══════ PART 2 ══════ -->
 <div class="part">PART 2 ─ 汽車保險（佔實務 44%）</div>
 
-<h2 class="car-h" id="map">三、先搞懂保單架構</h2>
+<h2 class="car-h" id="map">六、先搞懂保單架構</h2>
 
 <div class="trap">
   <b>「任意險」是分類，「第三人責任險」是產品</b>——像水果和蘋果，不是並列關係。<br>
@@ -288,7 +453,7 @@
   <tr><td>自己的車<b>被偷</b></td><td><b>竊盜損失險</b>（車體險不含）</td></tr>
 </table>
 
-<h3>3-1　強制險 vs 第三人責任險（最易混的一組）</h3>
+<h3>6-1　強制險 vs 第三人責任險（最易混的一組）</h3>
 
 <table class="t green">
   <tr><th>項目</th><th>強制險</th><th>第三人責任險</th></tr>
@@ -307,7 +472,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="car-h" id="others">四、賠別人：理賠順序計算</h2>
+<h2 class="car-h" id="others">七、賠別人：理賠順序計算</h2>
 
 <div class="mnemonic car-m">
   <span class="tag">公式</span>
@@ -361,7 +526,7 @@
   <p class="why">死亡（或殘廢第 1 級）<b>200 萬</b> ＋ 傷害醫療 <b>20 萬</b> ＝ 每一人合計上限 <b>220 萬</b>。三個數字一起背，考題三種問法都是這一組。</p>
 </div>
 
-<h3>4-1　強制險殘廢給付（考最兇的一組）</h3>
+<h3>7-1　強制險殘廢給付（考最兇的一組）</h3>
 
 <table class="t green center">
   <caption>① 給付金額（共 15 級）</caption>
@@ -401,7 +566,7 @@
   <tr class="hl"><td>殘廢等級<b>認定有疑義</b>時</td><td>得要求受害人提供<b>甲種診斷書</b></td></tr>
 </table>
 
-<h3>4-2　第三人責任險的附加條款</h3>
+<h3>7-2　第三人責任險的附加條款</h3>
 
 <table class="t green">
   <tr><th>條款</th><th>重點</th></tr>
@@ -424,9 +589,9 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="car-h" id="own">五、賠自己：車體險與竊盜險</h2>
+<h2 class="car-h" id="own">八、賠自己：車體險與竊盜險</h2>
 
-<h3>5-1　甲乙丙式承保範圍</h3>
+<h3>8-1　甲乙丙式承保範圍</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">口訣</span>
@@ -450,7 +615,7 @@
   <b>保費比例：</b>乙式基本保費約為甲式的 <b>55%</b>（承保範圍窄，保費自然便宜）。
 </div>
 
-<h3>5-2　自負額：定額 vs 比例（重要區分）</h3>
+<h3>8-2　自負額：定額 vs 比例（重要區分）</h3>
 
 <div class="trap">
   <b>甲乙式是「定額」，竊盜險是「比例」，千萬別混。</b><br>
@@ -505,7 +670,7 @@
   <b>竊盜險全損公式：保額 ×（1−折舊率）×（1−自負額%）。</b>先套折舊表算出「損失基礎」，再扣自負額比例。跟部分損失（直接用修復費用計算）算法不同。
 </div>
 
-<h3>5-3　竊盜險流程（5 → 30 → 15 → 7）</h3>
+<h3>8-3　竊盜險流程（5 → 30 → 15 → 7）</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">口訣</span>
@@ -534,7 +699,7 @@
   <b>對照：車體險</b>核保才是查 <b>3 年</b>賠款紀錄。<b>看到「竊盜險」問幾年 → 選「依無賠款紀錄計算原則」。</b></p>
 </div>
 
-<h3>5-4　全損：折舊率與賠償率</h3>
+<h3>8-4　全損：折舊率與賠償率</h3>
 
 <div class="trap">
   <b>先看題目問哪個詞：賠償率 ＝ 100% − 折舊率。</b>答錯常常只是看錯字。
@@ -570,7 +735,7 @@
   11～12 個月 → 自用 <b>25%</b>、營業 <b>30%</b>。中間各格才穩定 +2%。
 </div>
 
-<h3>5-5　零件、配件被竊損失險（一整組數字）</h3>
+<h3>8-5　零件、配件被竊損失險（一整組數字）</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">口訣</span>
@@ -597,9 +762,9 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="car-h" id="rate">六、保費怎麼算</h2>
+<h2 class="car-h" id="rate">九、保費怎麼算</h2>
 
-<h3>6-1　費率結構</h3>
+<h3>9-1　費率結構</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">口訣</span>
@@ -619,7 +784,7 @@
   因為分子分母期間要一致：已發生的損失，要對應「已經賺到的保費」。
 </div>
 
-<h3>6-2　賠款紀錄係數（強制險 vs 任意險，兩套表）</h3>
+<h3>9-2　賠款紀錄係數（強制險 vs 任意險，兩套表）</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">最重要對照</span>
@@ -675,7 +840,7 @@
   <p class="q-why">考的是觀念不是數字：<b>中斷投保不會讓無賠款紀錄歸零</b>。第一年累積的紀錄，第三年重保時仍可援用。</p>
 </div>
 
-<h3>6-3　年齡性別係數（U 型曲線，共 6 類）</h3>
+<h3>9-3　年齡性別係數（U 型曲線，共 6 類）</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">口訣</span>
@@ -698,7 +863,7 @@
   <b>法人</b>投保：沒有年齡性別，<b>只看肇事賠款紀錄</b>（個人戶查身分證字號、公司戶查車牌號碼，均 3 年）。
 </div>
 
-<h3>6-4　車齡減費係數</h3>
+<h3>9-4　車齡減費係數</h3>
 
 <table class="t green center">
   <tr><th>車齡</th><th>係數</th></tr>
@@ -708,7 +873,7 @@
 </table>
 <div class="note">記法：<b>5、10、15</b>。車越舊價值越低、出險賠得少，折扣越多。</div>
 
-<h3>6-5　車隊附加條款（三張表，最容易混）</h3>
+<h3>9-5　車隊附加條款（三張表，最容易混）</h3>
 
 <div class="trap">
   <b>三個險種各一張表。</b>同樣是損失率 30.1~40%，機車三責減 14%、車體險減 46%，差三倍多。<br>
@@ -728,7 +893,7 @@
   加費幅度：汽車三責(+3%) &lt; 車體險(+11%) &lt; 機車三責(+16%)。
 </div>
 
-<h3>6-6　短期費率（收錢貴、退錢少）</h3>
+<h3>9-6　短期費率（收錢貴、退錢少）</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">口訣</span>
@@ -747,7 +912,7 @@
   <b>不對稱要記：投保未滿一年用「短期費率」（貴）；中途終止退費按「日比例」（退得少）。</b>
 </div>
 
-<h3>6-7　強制險費率原則</h3>
+<h3>9-7　強制險費率原則</h3>
 
 <table class="t green center">
   <tr><th>車種</th><th>費率原則</th></tr>
@@ -756,7 +921,7 @@
 </table>
 <div class="note">機車保費低、件數多，查每個駕駛人的年齡性別紀錄行政成本划不來，所以只看車輛本身（排氣量、用途）。</div>
 
-<h3>6-8　強制險費率結構（小比率與固定費用）</h3>
+<h3>9-8　強制險費率結構（小比率與固定費用）</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">口訣</span>
@@ -794,9 +959,9 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="car-h" id="term">七、期限、程序與其他險種</h2>
+<h2 class="car-h" id="term">十、期限、程序與其他險種</h2>
 
-<h3>7-1　權益移轉的兩個期限</h3>
+<h3>10-1　權益移轉的兩個期限</h3>
 
 <table class="t green center">
   <tr><th>情境</th><th>期限</th><th>逾期後果</th></tr>
@@ -805,7 +970,7 @@
 </table>
 <div class="note">死亡或破產要處理繼承、清算，程序複雜，所以給比較長的時間。<b>同一題可能寫「三個月」也可能寫「九十日」，兩種說法都要認得。</b></div>
 
-<h3>7-2　強制險理賠期限（三種，最容易互相取代）</h3>
+<h3>10-2　強制險理賠期限（三種，最容易互相取代）</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">口訣</span>
@@ -822,7 +987,7 @@
 </table>
 <div class="note">看到「<b>工作日</b>」三個字就是 10；看到「<b>全民健康保險／代位</b>」就是 45；其餘一般流程才是 5＋10。</div>
 
-<h3>7-3　請求權時效（雙軌，一定要一起記）</h3>
+<h3>10-3　請求權時效（雙軌，一定要一起記）</h3>
 
 <div class="mnemonic car-m">
   <span class="tag">口訣</span>
@@ -840,7 +1005,7 @@
   <b>解題法：題目寫「知有請求權」選 2 年，寫「事故發生起」選 10 年。</b>
 </div>
 
-<h3>7-4　其他期限與程序</h3>
+<h3>10-4　其他期限與程序</h3>
 
 <table class="t green">
   <tr><th>事項</th><th>規定</th></tr>
@@ -862,14 +1027,11 @@
   <tr><td>強制險財產保險公司廢止經營許可後</td><td><b>2 年</b>內不得再申請經營</td></tr>
 </table>
 <div class="trap">
-  <b>兩個「通知監理機關」別搞混：</b>承保成立 → <b>4 個工作日</b>；契約終止 → <b>3 日</b>。終止要更快通報，避免保戶不知情出現保障空窗。
+  <b>三個「通知」期限別搞混：</b>承保資料傳輸 <b>4 個工作日</b>／契約終止通知監理機關 <b>3 日</b>／拒絕承保書面表示 <b>10 日</b>。<br>
+  <b>為什麼終止（3 日）比承保（4 工作日）還急？</b>保單沒了卻沒人通報，保戶會在不知情下裸奔，所以終止要更快。
 </div>
 
-<div class="trap">
-  <b>三個「通知」期限別搞混：</b>承保資料傳輸 <b>4 個工作日</b>／契約終止通知監理機關 <b>3 日</b>／拒絕承保書面表示 <b>10 日</b>。
-</div>
-
-<h3>7-5　貨物運送人責任險（六個數字）</h3>
+<h3>10-5　貨物運送人責任險（六個數字）</h3>
 
 <table class="t green">
   <tr><th>項目</th><th>數字</th></tr>
@@ -888,7 +1050,7 @@
 <!-- ══════ PART 3 ══════ -->
 <div class="part">PART 3 ─ 火災保險</div>
 
-<h2 class="fire-h" id="firemap">八、先分清三張保單</h2>
+<h2 class="fire-h" id="firemap">十一、先分清三張保單</h2>
 
 <div class="trap">
   <b>火險所有題目的第一個動作：先問「這題在講哪一張保單？」</b><br>
@@ -900,7 +1062,8 @@
   <div class="lv1">├─ <b class="cmp">住宅火災及地震基本保險</b> <span class="cm">← 一個包裹，買了就全含</span></div>
   <div class="lv2">├─ 住宅火災保險 <span class="cm">→ 保額用「重置成本」</span></div>
   <div class="lv2">├─ 住宅地震基本保險 <span class="cm">→ 政策性，定額 150 萬</span></div>
-  <div class="lv2">└─ 住宅第三人責任基本保險</div>
+  <div class="lv2">├─ 住宅第三人責任基本保險</div>
+  <div class="lv2">└─ 額外費用＋<b>颱洪災害補償</b>（定額 7～9 千）<span class="cm">← 109/1/1 起內含</span></div>
   <div class="lv1">├─ <b class="opt">商業火災保險</b> <span class="cm">← 費率自由化，各公司自己訂</span></div>
   <div class="lv1">└─ <b style="color:#b91c1c">附加險（要另外加費）</b></div>
   <div class="lv2">├─ 颱風及洪水險　├─ 擴大地震險　├─ 爆炸險</div>
@@ -934,9 +1097,102 @@
   其餘三項正確：事故發生時遭受損失、享有賠償請求權、承保受僱人所有物時該受僱人就<b>該特定物</b>視為被保險人。</p>
 </div>
 
+<h3>11-1　承保、可加保、絕對不保</h3>
+
+<div class="mnemonic fire-m">
+  <span class="tag">口訣</span>
+  <div class="chant">火山 · 輻射 · 戰爭　永遠不保</div>
+  <p class="why">這三個是<b>巨災級不可保危險</b>，加錢也保不到。其餘（爆炸、竊盜、地震、颱風、洪水、罷工暴動、恐怖主義）都<b>可以加保</b>。</p>
+</div>
+
+<table class="t red">
+  <tr><th>類別</th><th>項目</th></tr>
+  <tr><td><b>商火</b>基本承保事故</td><td>火災、<b>爆炸引起之火災</b>、閃電雷擊</td></tr>
+  <tr><td><b>住火</b>承保事故（較廣）</td><td>火災、閃電雷擊、爆炸、航空器墜落、機動車輛碰撞、<b>煙燻</b>、<b>竊盜</b></td></tr>
+  <tr class="hl"><td><b>可加保</b></td><td>爆炸、竊盜、地震、颱風、洪水、罷工、暴動、民眾騷擾、恐怖主義</td></tr>
+  <tr class="hl"><td><b>絕對不保</b></td><td><b>火山爆發、輻射、戰爭</b></td></tr>
+</table>
+<div class="note">
+  <b>商火 vs 住火的差別：</b>商火只認「火、爆炸引起的火、雷擊」三樣；住火是政策性商品，連煙燻和竊盜都含進去。<br>
+  <b>注意用字：</b>商火寫的是「<b>爆炸引起之火災</b>」——單純爆炸（沒起火）不賠，要另外附加爆炸險。
+</div>
+
+<h3>11-2　109/1/1 擴大保障 — 舊數字全部作廢</h3>
+
+<div class="trap">
+  <b>這一節是最大的「考古題地雷區」。</b>金管會核定產險公會自 <b>109/1/1</b> 起擴大住宅火災保險保障，<b>不調漲保費</b>但限額全面提高。<br>
+  網路上多數整理仍停留在舊數字，<b>看到下面「舊」欄的數字要直接反射「這已經改了」</b>。
+</div>
+
+<div class="mnemonic fire-m">
+  <span class="tag">口訣</span>
+  <div class="chant">責任全部乘以二</div>
+  <p class="why">住宅第三人責任基本保險的四個限額<b>一律加倍</b>；只有「保險期間最高賠償」是 2,000 → <b>2,400</b> 萬（不是 4,000）。</p>
+</div>
+
+<table class="t red">
+  <caption>住宅第三人責任基本保險（含在住火包裹裡）</caption>
+  <tr><th>項目</th><th>舊（作廢）</th><th><b>現行</b></th></tr>
+  <tr class="hl"><td>每一個人<b>體傷</b></td><td>50 萬</td><td><b>100 萬</b></td></tr>
+  <tr class="hl"><td>每一個人<b>死亡</b></td><td>100 萬</td><td><b>200 萬</b></td></tr>
+  <tr><td>每一事故 體傷及死亡</td><td>500 萬</td><td><b>1,000 萬</b></td></tr>
+  <tr><td>每一事故 <b>財物</b>損害</td><td>100 萬</td><td><b>200 萬</b></td></tr>
+  <tr class="hl"><td>最高賠償金額</td><td>2,000 萬</td><td><b>2,400 萬</b></td></tr>
+</table>
+<div class="note">
+  記法：<b>傷 100 · 死 200 · 事故 1000 · 財損 200 · 頂 2400</b>。<br>
+  對照<b>強制險</b>的「傷 20 · 死 200 · 頂 220」——<b>死亡都是 200 萬</b>，其餘完全不同，別互相污染。
+</div>
+
+<table class="t red">
+  <caption>其他一起提高的限額</caption>
+  <tr><th>項目</th><th>舊</th><th><b>現行</b></th></tr>
+  <tr class="hl"><td>建築物內<b>動產</b>保額上限</td><td>60 萬</td><td><b>80 萬</b>（建築物保額之 30%）</td></tr>
+  <tr class="hl"><td><b>竊盜</b>每一事故</td><td>10 萬</td><td><b>15 萬</b></td></tr>
+  <tr class="hl"><td><b>竊盜</b>保險期間累計</td><td>20 萬</td><td><b>30 萬</b></td></tr>
+  <tr><td>住宅類建築造價參考表</td><td>—</td><td>每坪造價平均<b>調高約 18%</b></td></tr>
+</table>
+<div class="note">竊盜記法：<b>單次 15、累計 30</b>（累計正好是單次的 2 倍），自負額每次 <b>5,000 元</b>。</div>
+
+<h3>11-3　新增的「額外費用」五項</h3>
+
+<div class="mnemonic fire-m">
+  <span class="tag">口訣</span>
+  <div class="chant">證件租仲五千 · 搬家十萬<br>住宿五千一天 · 不便三千一天</div>
+  <p class="why">前兩項是<b>小額定額</b>，搬遷是<b>一筆總額</b>，後兩項是<b>按日計算</b>。</p>
+</div>
+
+<table class="t red">
+  <caption>住宅火災保險額外費用（109/1/1 新增）</caption>
+  <tr><th>項目</th><th>限額</th></tr>
+  <tr><td>金融、信用卡及證件<b>重製</b>費用</td><td><b>5,000 元</b>為限</td></tr>
+  <tr><td><b>租屋仲介</b>費用</td><td><b>5,000 元</b>為限</td></tr>
+  <tr><td><b>搬遷</b>費用</td><td><b>10 萬元</b>為限</td></tr>
+  <tr class="hl"><td><b>臨時住宿</b>費用（檢據）</td><td>每日最高 <b>5,000 元</b>，總額 <b>20 萬元</b>為限</td></tr>
+  <tr class="hl"><td><b>生活不便補償金</b></td><td>每日 <b>3,000 元</b>，每一事故最高 <b>30 日</b></td></tr>
+</table>
+<div class="trap">
+  <b>「每日 3,000 元」的真正歸屬：</b>是住宅火災的<b>生活不便補償金</b>（上限 <b>30 日</b>），<b>不是</b>地震的臨時住宿費用。<br>
+  看到 3,000 元先問：<b>幾日？30 日＝生活不便補償金（火災）／60 日＝地震險舊制考古題。</b>
+</div>
+
+<h3>11-4　颱洪有兩種，別混成一種</h3>
+
+<table class="t red">
+  <tr><th></th><th>住宅颱風及洪水<b>災害補償</b></th><th>住宅颱風及洪水<b>險</b></th></tr>
+  <tr class="hl"><td>要不要加費</td><td><b>已內含</b>在住宅火災保險</td><td><b>附加，要加費</b></td></tr>
+  <tr><td>給付方式</td><td><b>定額</b>，依地區分三區</td><td>按實際損失，受保額限制</td></tr>
+  <tr class="hl"><td>額度</td><td>第一區（風險最低）<b>9,000</b>／第二區 <b>8,000</b>／第三區（風險最高）<b>7,000</b></td><td>保額為火險保額 <b>80%</b> 為原則，最高 100%</td></tr>
+  <tr><td>理賠簡化</td><td>淹水達 <b>50 公分</b>符合水災救助標準者，<b>免附損失清單</b></td><td>正常查勘理賠</td></tr>
+</table>
+<div class="note">
+  <b>為什麼風險最低的第一區反而拿最多？</b>因為這是<b>定額補償</b>不是保險理賠——風險高的地區本來就該去買附加颱洪險，定額補償只是應急金，風險越高的區給越少以免逆選擇。<br>
+  <b>考題判斷：</b>問「須另行加繳保費附加之險種」→ 答案仍是<b>住宅颱風及洪水險</b>（第 23 題）。定額的<b>災害補償</b>才是內含的。
+</div>
+
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="fire-h" id="firesum">九、保險金額與理賠計算</h2>
+<h2 class="fire-h" id="firesum">十二、保險金額與理賠計算</h2>
 
 <div class="mnemonic fire-m">
   <span class="tag">最高頻觀念</span>
@@ -952,7 +1208,7 @@
 </table>
 <div class="note"><b>用字陷阱：</b>選項寫「實際<b>價值</b>」和「實際<b>現金</b>價值」是兩回事，正確用語是「<b>實際現金價值</b>」。看到二擇一的題目，要挑有「現金」兩個字的那個。</div>
 
-<h3>9-1　什麼情況算「足額投保」（不受比例分攤）</h3>
+<h3>12-1　什麼情況算「足額投保」（不受比例分攤）</h3>
 
 <table class="t red">
   <tr><th>情況</th><th>結果</th></tr>
@@ -961,7 +1217,7 @@
 </table>
 <div class="note">兩條路都通往同一個結論：<b>不必按比例打折賠</b>。前者是「照官方表投保就認你足額」，後者是「達六成也認你足額」，住宅火險特有的寬容規定。</div>
 
-<h3>9-2　不足額理賠：順序絕對不能顛倒</h3>
+<h3>12-2　不足額理賠：順序絕對不能顛倒</h3>
 
 <div class="mnemonic fire-m">
   <span class="tag">公式</span>
@@ -978,7 +1234,7 @@
 </div>
 <div class="trap"><b>錯誤算法：</b>先扣自負額再分攤 →（100−5）×62.5% ＝ 59.4 萬。<b>選項裡就是有這種數字在等你。</b></div>
 
-<h3>9-3　賠了之後、賠附帶費用</h3>
+<h3>12-3　賠了之後、賠附帶費用</h3>
 
 <div class="q-card">
   <p class="q-text">Q. 住宅火險保單有效期間內因火災發生<b>部分損失</b>，保險公司依約賠償後？</p>
@@ -1001,9 +1257,20 @@
   <b>臨時住宿費用不算在內</b>：那是給人住的生活補償，不是房子的價值，抵押權效力不及於它。</p>
 </div>
 
+<table class="t red">
+  <caption>抵押權附加條款 — 火災和地震比例不同</caption>
+  <tr><th>事故</th><th>優先給抵押權人</th><th>被保險人拿到</th></tr>
+  <tr class="hl"><td><b>火災</b></td><td>債權範圍內 <b>100%</b></td><td>剩餘保險金</td></tr>
+  <tr class="hl"><td><b>地震</b></td><td>保險金之 <b>60%</b>（按抵押順位）</td><td>其餘 40% ＋<b>臨時住宿 20 萬全額</b></td></tr>
+</table>
+<div class="note">
+  <b>為什麼地震只給 60%？</b>地震全損後房子沒了、人也要住，政策上刻意留 40% 給災民重建生活；<b>臨時住宿費用更是 100% 不受抵押權影響</b>，等同急難救助金。<br>
+  記法：<b>火災全給銀行、地震六成給銀行</b>。
+</div>
+
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="fire-h" id="quake">十、政策性住宅地震基本保險</h2>
+<h2 class="fire-h" id="quake">十三、政策性住宅地震基本保險</h2>
 
 <div class="mnemonic fire-m">
   <span class="tag">口訣</span>
@@ -1011,8 +1278,10 @@
   <p class="why">建築物保額上限 <b>150 萬</b>、臨時住宿 <b>20 萬</b>、一年期保費 <b>1,350 元</b>。三個數字一組背，考最兇。</p>
 </div>
 
+<h3>13-1　核心參數（全國單一費率）</h3>
+
 <table class="t red">
-  <caption>政策性住宅地震基本保險 — 全國單一費率</caption>
+  <caption>政策性住宅地震基本保險</caption>
   <tr><th>項目</th><th>內容</th></tr>
   <tr class="hl"><td>每一住宅建築物保險金額</td><td>最高 <b>150 萬元</b></td></tr>
   <tr class="hl"><td>臨時住宿費用</td><td>每一住宅建築物 <b>20 萬元</b>（<b>定額</b>、免檢據、不適用抵押權條款）</td></tr>
@@ -1022,7 +1291,7 @@
   <tr><td>認定單位</td><td>政府機關、建築師公會，或結構／土木／大地技師公會</td></tr>
 </table>
 
-<h3>10-2　臨時住宿費用 — 火災的 vs 地震的（真陷阱在這）</h3>
+<h3>13-2　臨時住宿費用 — 火災的 vs 地震的（真陷阱在這）</h3>
 
 <div class="mnemonic fire-m">
   <span class="tag">分辨法</span>
@@ -1034,15 +1303,16 @@
   <caption>同名不同物：兩章的臨時住宿費用</caption>
   <tr><th>項目</th><th>住宅<b>火災</b>保險</th><th>住宅<b>地震</b>基本保險</th></tr>
   <tr><td>給付方式</td><td><b>檢據</b>實支實付</td><td><b>定額</b>給付、免憑證</td></tr>
-  <tr class="hl"><td>額度</td><td>每日上限 × 總額 <b>20 萬</b>為限</td><td>每一住宅建築物 <b>20 萬</b></td></tr>
+  <tr class="hl"><td>額度</td><td>每日最高 <b>5,000 元</b>，總額 <b>20 萬</b>為限</td><td>每一住宅建築物 <b>20 萬</b></td></tr>
   <tr><td>抵押權條款</td><td>一般處理</td><td><b>不適用</b>，保戶 100% 取得</td></tr>
 </table>
 
 <div class="trap">
-  <b>考古題「每日 3,000 元、60 日為限」怎麼辦？</b>那是地震險<b>早年</b>的條款（3,000×60 ＝ <b>18 萬</b>，抵押權那題出現的 18 萬就是它），現已改為定額 20 萬。<br>
-  ・題目寫<b>住宅地震</b>、選項有 <b>20 萬</b> → 選 <b>20 萬</b><br>
-  ・題目寫<b>住宅地震</b>、選項<b>只有</b>每日×日數 → 選 <b>3,000 元／60 日</b>（舊制題）<br>
-  ・題目寫<b>住宅火災</b>、選項有每日金額 → 走實支實付，總額仍以 <b>20 萬</b>為限
+  <b>三個「每日金額」全部分清楚：</b><br>
+  ・<b>5,000 元／日</b>、總額 20 萬 → 住宅<b>火災</b>的<b>臨時住宿費用</b>（檢據，現行）<br>
+  ・<b>3,000 元／日</b>、最高 <b>30 日</b> → 住宅<b>火災</b>的<b>生活不便補償金</b>（現行，109/1/1 新增）<br>
+  ・<b>3,000 元／日</b>、最高 <b>60 日</b> → 住宅<b>地震</b>臨時住宿費用<b>舊制</b>（3,000×60 ＝ 18 萬，抵押權那題的 18 萬就是它）<br>
+  <b>判斷順序：先看幾日 → 再看火災還地震。</b>題目寫住宅地震且選項有 <b>20 萬</b> → 一律選 <b>20 萬</b>。
 </div>
 
 <div class="note">
@@ -1053,7 +1323,7 @@
   <b>為什麼是現金為限？</b>地震是巨災，全國同時出險，保險公司不可能替每一戶去修去蓋。<b>只賠現金＋只賠全損＋定額</b>，這三件事是一組的。
 </div>
 
-<h3>10-3　擴大地震險（附加，補 150 萬不夠的部分）</h3>
+<h3>13-3　擴大地震險（附加，補 150 萬不夠的部分）</h3>
 
 <table class="t red">
   <tr><th>項目</th><th>數字</th></tr>
@@ -1064,7 +1334,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="fire-h" id="fireadd">十一、附加險數字表</h2>
+<h2 class="fire-h" id="fireadd">十四、附加險數字表</h2>
 
 <div class="mnemonic fire-m">
   <span class="tag">分類數口訣</span>
@@ -1100,7 +1370,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="fire-h" id="firerate">十二、費率與費用（自由化第三階段）</h2>
+<h2 class="fire-h" id="firerate">十五、費率與費用（自由化第三階段）</h2>
 
 <div class="mnemonic fire-m">
   <span class="tag">口訣</span>
@@ -1132,6 +1402,7 @@
   <tr class="hl"><td><b>特別優待率</b>條件二</td><td>最近三年平均損失率 <b>50%</b> 以下</td></tr>
   <tr><td>自負額提高減費</td><td>提高至 <b>10 萬元</b>以上，減費 <b>4%～30%</b></td></tr>
   <tr><td>普通品行號店鋪（有製造工作）</td><td>從事製造工作人員不得超過 <b>15 人</b></td></tr>
+  <tr><td><b>高樓加費</b>（可量化項目）</td><td><b>15～24 樓</b>加 <b>10%</b>／<b>25 樓以上</b>加 <b>15%</b></td></tr>
 </table>
 <div class="note">店鋪超過 15 人做加工，性質已接近<b>工廠</b>，就不能再用店鋪的低費率。</div>
 
@@ -1144,7 +1415,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="fire-h" id="fireterm">十三、期限與契約變動</h2>
+<h2 class="fire-h" id="fireterm">十六、期限與契約變動</h2>
 
 <div class="trap">
   <b>本節最大陷阱：破產與死亡，時點方向相反。</b><br>
@@ -1156,6 +1427,9 @@
   <caption>火險期限總表</caption>
   <tr><th>期限</th><th>情境</th></tr>
   <tr><td><b>1 個月</b></td><td>暫保單通常有效期間</td></tr>
+  <tr class="hl"><td><b>30 日</b>以上</td><td>認定為<b>停工</b></td></tr>
+  <tr class="hl"><td><b>60 日</b>以上無人看管</td><td>認定為<b>空屋</b> → <b>保險效力即停止</b></td></tr>
+  <tr><td><b>15 日</b>內</td><td>商業火險賠付期限</td></tr>
   <tr><td><b>10 日內</b></td><td>使用性質變更致危險增加，且<b>非</b>要保人／被保險人行為所致 → 知悉後通知</td></tr>
   <tr class="hl"><td><b>30 日</b></td><td>保險費<b>延緩交付</b>特約：自保險責任開始日起最遲繳清</td></tr>
   <tr class="hl"><td><b>90 日內</b></td><td>標的物因<b>轉讓</b>而移轉，契約對受讓人仍繼續有效</td></tr>
@@ -1166,7 +1440,7 @@
   變更若是<b>自己造成</b>的 → 要<b>事前</b>通知；<b>別人造成</b>（房客擅自改用途）→ 知悉後 <b>10 日內</b>通知即可。這跟保險法的通則一致。
 </div>
 
-<h3>13-1　要保人中途終止：短期費率，不是按日算</h3>
+<h3>16-1　要保人中途終止：短期費率，不是按日算</h3>
 
 <div class="mnemonic fire-m">
   <span class="tag">關鍵區分</span>
@@ -1184,7 +1458,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 class="fire-h" id="firenum">十四、火險數字速查</h2>
+<h2 class="fire-h" id="firenum">十七、火險數字速查</h2>
 
 <table class="t red center">
   <caption>百分比</caption>
@@ -1203,7 +1477,16 @@
   <caption>金額</caption>
   <tr><th>金額</th><th>用途</th></tr>
   <tr><td><b>30 元</b></td><td>通路服務費上限（每保單）</td></tr>
+  <tr><td><b>3,000 元／日</b></td><td>生活不便補償金（火災，最高 30 日）</td></tr>
+  <tr><td><b>5,000 元</b></td><td>證件重製／租屋仲介／竊盜自負額；臨時住宿<b>每日</b>上限</td></tr>
+  <tr><td><b>7～9 千</b></td><td>颱洪災害補償定額（三區，風險低者高）</td></tr>
   <tr><td><b>3 萬</b></td><td>SRCC 自負額／颱洪非住宅自負額下限</td></tr>
+  <tr><td><b>10 萬</b></td><td>搬遷費用上限</td></tr>
+  <tr><td><b>15 / 30 萬</b></td><td>竊盜：每一事故／保險期間累計</td></tr>
+  <tr><td><b>80 萬</b></td><td>建築物內動產保額上限</td></tr>
+  <tr><td><b>100 / 200 萬</b></td><td>住宅第三人責任：每人體傷／每人死亡</td></tr>
+  <tr><td><b>1,000 萬</b></td><td>住宅第三人責任：每一事故體傷及死亡</td></tr>
+  <tr><td><b>2,400 萬</b></td><td>住宅第三人責任最高賠償</td></tr>
   <tr><td><b>10 萬</b></td><td>自負額提高減費門檻</td></tr>
   <tr><td><b>20 萬</b></td><td>臨時住宿費用上限（地震＝定額／火災＝檢據總額）</td></tr>
   <tr><td><b>150 萬</b></td><td>住宅地震基本保險<b>保額上限</b></td></tr>
@@ -1230,15 +1513,138 @@
   ② 計算 <b>先比例、後自負額</b>；<b>要保人退＝短期費率、保險人退＝按日比例</b><br>
   ③ 地震 <b>150 萬 · 20 萬 · 1,350 元 · 全損五成 · 現金為限</b><br>
   ④ 分類 <b>爆六 · 震三 · 颱三區 · 擴四區</b><br>
-  ⑤ 門檻 <b>巨額 30 億 · 優待 1 億＋五成 · 附加費用率 44.5%</b>
+  ⑤ 門檻 <b>巨額 30 億 · 優待 1 億＋五成 · 附加費用率 44.5%</b><br>
+  ⑥ 109 新制 <b>責任傷100死200頂2400 · 動產80萬 · 竊盜15/30萬 · 生活不便3千×30日</b>
 </div>
 
 <a class="top" href="#top">↑ 回頂端</a>
 
 <!-- ══════ PART 4 ══════ -->
-<div class="part">PART 4 ─ 全科數字速查（考前一小時翻）</div>
+<div class="part">PART 4 ─ 其他險種（低比重，抓大放小）</div>
 
-<h2 id="days">十五、天數</h2>
+<div class="trap">
+  <b>準備策略：</b>責任、傷害、健康各約 1～3 題，運輸與工程更少。<br>
+  <b>只記每個險種「最好認的那 2～3 個特徵」就好</b>，不要背細節，時間該留給車險和火險。
+</div>
+
+<h2 class="misc-h" id="pahealth">十八、傷害保險與健康保險</h2>
+
+<div class="mnemonic misc-m">
+  <span class="tag">口訣</span>
+  <div class="chant">斷一半 · 裂四分 · 微裂八分</div>
+  <p class="why">骨折給付＝日額 × 天數 × 係數。<b>完全骨折 1/2</b>、<b>未完全骨折 1/4</b>、<b>骨裂 1/8</b>，傷得越輕、係數砍一半。</p>
+</div>
+
+<table class="t orange">
+  <caption>傷害保險</caption>
+  <tr><th>項目</th><th>內容</th></tr>
+  <tr class="hl"><td>費率計算基礎</td><td>以<b>職業</b>為基礎（不是年齡、不是性別）</td></tr>
+  <tr class="hl"><td>殘廢給付範圍</td><td>意外發生後 <b>180 日</b>內致殘</td></tr>
+  <tr><td>殘廢等級判定</td><td>治療後 <b>6 個月</b>內判定（機能永久喪失）</td></tr>
+  <tr><td>不需告知的疾病</td><td><b>痛風、肝炎</b>（跟意外傷害無關）</td></tr>
+</table>
+<div class="trap">
+  <b>殘廢判定期限有兩個：</b>一般<b>傷害險 6 個月</b>／<b>強制險 1 年</b>。強制險是政策性保險，時間放寬。
+</div>
+
+<table class="t orange">
+  <caption>健康保險（產險公司賣的）</caption>
+  <tr><th>項目</th><th>內容</th></tr>
+  <tr class="hl"><td>保險期間</td><td><b>1 年以下</b>，且<b>不保證續保</b></td></tr>
+  <tr class="hl"><td>不含</td><td>一般<b>疾病死亡</b>（那是壽險的事）</td></tr>
+  <tr><td>同一次住院認定</td><td>同一疾病出院後 <b>14 日</b>內再住<b>同一醫院</b>＝同一次住院</td></tr>
+  <tr><td>就醫調查資料費用</td><td>由<b>保險人</b>支出</td></tr>
+</table>
+
+<div class="mnemonic misc-m">
+  <span class="tag">口訣</span>
+  <div class="chant">業 · 醫 · 核 · 調</div>
+  <p class="why">危險選擇四道關卡，照「<b>接觸客戶的先後</b>」排：<b>業</b>務員（第一線，<b>最重要</b>）→ 體檢<b>醫</b>師 → <b>核</b>保人員 → 保險<b>調</b>查員。</p>
+</div>
+
+<a class="top" href="#top">↑ 回頂端</a>
+
+<h2 class="misc-h" id="liability">十九、責任保險</h2>
+
+<div class="mnemonic misc-m">
+  <span class="tag">核心觀念</span>
+  <div class="chant">別人先來要錢<br>你才有損失</div>
+  <p class="why">所以責任險的時效從「<b>受第三人請求之日</b>」起算 <b>2 年</b>，不是從事故發生日起算——事故當下你根本不知道對方會不會告你。</p>
+</div>
+
+<table class="t orange">
+  <caption>三種責任險的辨識點</caption>
+  <tr><th>險種</th><th>關鍵特徵</th></tr>
+  <tr class="hl"><td><b>公共意外</b>責任險</td><td>保<b>過失</b>責任；採<b>自由費率</b>；依使用性質分 <b>6 類</b></td></tr>
+  <tr class="hl"><td><b>電梯意外</b>責任險</td><td>依承保對象（使用性質）分 <b>3 類</b></td></tr>
+  <tr class="hl"><td><b>雇主意外</b>責任險</td><td>要保人＝被保險人＝<b>雇主</b>；受僱人須滿 <b>15 歲</b>；<b>只保體傷或死亡，不含財損</b></td></tr>
+</table>
+<div class="note">
+  <b>雇主責任險保的是什麼？</b>是雇主依法應負的<b>侵權行為賠償責任</b>——員工受傷來告老闆，這張單替老闆賠。不是替員工買的傷害險。<br>
+  <b>分類數口訣：電梯 3 · 公意 6</b>（跟擴大地震 4 區、三責賠款紀錄 19 級一起記）。
+</div>
+
+<a class="top" href="#top">↑ 回頂端</a>
+
+<h2 class="misc-h" id="marineeng">二十、運輸保險與工程保險</h2>
+
+<div class="mnemonic misc-m">
+  <span class="tag">口訣</span>
+  <div class="chant">貨走航程 · 船走時間</div>
+  <p class="why"><b>貨物</b>運輸保險＝<b>航程</b>保險單（從 A 港到 B 港，不限時間）；<b>船體、機體</b>＝<b>時間</b>保險單（保一年這種）。</p>
+</div>
+
+<table class="t orange">
+  <caption>運輸保險（水險）</caption>
+  <tr><th>項目</th><th>內容</th></tr>
+  <tr><td>法律基礎</td><td>仿<b>英國</b>（海上保險發源地）</td></tr>
+  <tr class="hl"><td>保單型態</td><td>貨物＝<b>航程</b>保單／船體、機體＝<b>時間</b>保單</td></tr>
+  <tr class="hl"><td>價值認定</td><td>採<b>定值</b>保險（跟火險的不定值相反）</td></tr>
+  <tr><td><b>CIF</b>（含成本、保險、運費）</td><td><b>出口</b>商投保</td></tr>
+  <tr><td><b>CFR</b>（只含成本、運費）</td><td><b>進口</b>商投保</td></tr>
+</table>
+<div class="note">
+  <b>CIF 的 I 就是 Insurance</b>——條件裡含保險，代表<b>賣方（出口商）</b>已經把保險買好了。CFR 沒有 I，保險得由<b>買方（進口商）</b>自己買。
+</div>
+
+<div class="mnemonic misc-m">
+  <span class="tag">口訣</span>
+  <div class="chant">颱48 · 震72 · 住宅震168</div>
+  <p class="why"><b>營造綜合險</b>：颱風 48 小時、地震 72 小時內視同一次。<b>住宅</b>地震險則是 <b>168</b> 小時（＝7 天）。</p>
+</div>
+
+<div class="trap">
+  <b>72 這個數字出現兩次，意思不同：</b>營造綜合險的<b>地震</b> 72 小時／颱洪險的<b>洪水退去後</b> 72 小時。<br>
+  看到「地震幾小時視同一次」先問<b>工地還是住家</b>——工地 <b>72</b>、住家 <b>168</b>。
+</div>
+
+<table class="t orange">
+  <caption>工程保險 — 各險種的「不保什麼」</caption>
+  <tr><th>險種</th><th>不承保</th></tr>
+  <tr class="hl"><td>營建機具險</td><td>不含<b>機械故障</b></td></tr>
+  <tr class="hl"><td>機械保險</td><td>不含<b>火災</b></td></tr>
+  <tr class="hl"><td>電子設備險</td><td>不含<b>電力中斷、電腦病毒</b></td></tr>
+</table>
+<div class="note">記法：<b>機具怕故障、機械怕火、電子怕斷電和病毒</b>——各自最典型的風險，剛好都是自己不保的那一項（要另外加保）。</div>
+
+<table class="t orange">
+  <caption>工程保險其他重點</caption>
+  <tr><th>項目</th><th>內容</th></tr>
+  <tr><td>鍋爐事故主因</td><td><b>維護不當</b></td></tr>
+  <tr><td>機械類工程險賠償基礎</td><td>以<b>實際價值</b>為準</td></tr>
+  <tr class="hl"><td>營造綜合險附加<b>竊盜</b>自負額</td><td>第 1 次 <b>20%</b>／第 2 次 <b>50%</b>／<b>第 3 次以上不賠</b></td></tr>
+  <tr class="hl"><td>營造綜合險<b>第三人管線</b>自負額</td><td>第 1 次 <b>20%</b>／第 2 次 <b>30%</b>／第 3 次以上 <b>50%</b></td></tr>
+</table>
+<div class="note">
+  <b>兩張自負額表最容易互換：</b>都從 <b>20%</b> 起跳，差別在後面——<b>竊盜是 20 → 50 → 不賠</b>（懲罰性重，因為一直被偷代表工地管理有問題）；<b>管線是 20 → 30 → 50</b>（一路加重但仍賠）。
+</div>
+
+<a class="top" href="#top">↑ 回頂端</a>
+
+<!-- ══════ PART 5 ══════ -->
+<div class="part">PART 5 ─ 全科數字速查（考前一小時翻）</div>
+
+<h2 id="days">二十一、天數</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
@@ -1271,7 +1677,8 @@
   <tr><td>強制險屆滿未續保 → 30 日內再通知 <b>2 次</b></td></tr>
   <tr><td><b>45</b></td><td>強制險：接到<b>健保代位</b>通知後確定並給付</td></tr>
   <tr><td><b>60</b></td><td>火險：空屋認定（效力停止）</td></tr>
-  <tr><td><b>90</b></td><td>被保險人死亡／破產 → 辦權益移轉（＝3 個月）</td></tr>
+  <tr><td rowspan="2"><b>90</b></td><td>車險：被保險人死亡／破產 → 辦權益移轉（＝3 個月）</td></tr>
+  <tr><td><b>住火</b>：標的物<b>轉讓</b>移轉後，契約對受讓人仍有效（條款寫「<b>九十日</b>」）</td></tr>
   <tr><td rowspan="2"><b>180</b></td><td>傷害險：意外發生後致殘廢之給付範圍</td></tr>
   <tr><td>駕駛人傷害醫療給付期限</td></tr>
 </table>
@@ -1284,7 +1691,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 id="hours">十六、小時（天災「視同一次」）</h2>
+<h2 id="hours">二十二、小時（天災「視同一次」）</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
@@ -1306,12 +1713,10 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 id="months">十七、月與年</h2>
+<h2 id="months">二十三、月與年</h2>
 
-<div class="mnemonic">
-  <span class="tag">口訣</span>
-  <div class="chant">知二 · 發十</div>
-  <p class="why">保險法時效：從「<b>知</b>道」起算 <b>2</b> 年、從「<b>發</b>生」起算 <b>10</b> 年。（個資法的「發生起」是 5 年）</p>
+<div class="note">
+  時效主口訣 <b>知二 · 發十</b> 已在「<b>一、法源與起算點</b>」完整說明，這裡只列數字對照。
 </div>
 
 <table class="t">
@@ -1319,8 +1724,8 @@
   <tr><td rowspan="3"><b>1 個月</b></td><td>保險人知有解除原因後行使解除權</td></tr>
   <tr><td>海商法：貨損通知期限</td></tr>
   <tr><td>火險損失估計遲延 → 加給利息起算</td></tr>
-  <tr><td rowspan="3"><b>3 個月</b></td><td>商火：被保險人破產或死亡 → 得終止契約</td></tr>
-  <tr><td>住火地震：標的物移轉後保單仍有效</td></tr>
+  <tr><td rowspan="3"><b>3 個月</b></td><td>商火：被保險人<b>破產</b> → 宣告次日起 3 個月<b>內</b>得終止</td></tr>
+  <tr><td>商火：被保險人<b>死亡</b> → 屆滿 3 個月<b>後</b>得終止</td></tr>
   <tr><td>車險：被保險人死亡／破產 → 辦權益移轉</td></tr>
   <tr><td rowspan="2"><b>6 個月</b></td><td>傷害險：殘廢等級判定期限</td></tr>
   <tr><td>對警方肇事研判有異議 → 申請鑑定</td></tr>
@@ -1340,16 +1745,14 @@
   <tr><td><b>強制險</b>：自汽車交通事故<b>發生</b>起（絕對時效）</td></tr>
 </table>
 <div class="trap">
-  <b>強制險時效雙軌：</b>「<b>知</b>有請求權」起 <b>2 年</b>／「事故<b>發生</b>」起 <b>10 年</b>。同一題兩種問法、兩個答案。
-</div>
-
-<div class="trap">
-  <b>易混：</b>殘廢判定期限有兩個。<b>強制險 1 年</b>、<b>一般傷害險 6 個月</b>。強制險是政策性保險，時間較寬鬆。
+  <b>本表兩組雙答案（完整說明見十、十八章）：</b><br>
+  ・強制險時效 → 「<b>知</b>有請求權」<b>2 年</b>／「事故<b>發生</b>」<b>10 年</b><br>
+  ・殘廢判定 → <b>強制險 1 年</b>／<b>傷害險 6 個月</b>
 </div>
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 id="money">十八、金額</h2>
+<h2 id="money">二十四、金額</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
@@ -1399,7 +1802,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 id="percent">十九、百分比</h2>
+<h2 id="percent">二十五、百分比</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
@@ -1456,7 +1859,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 id="levels">二十、級距與分類數</h2>
+<h2 id="levels">二十六、級距與分類數</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
@@ -1507,7 +1910,7 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<h2 id="years">二十一、民國年份</h2>
+<h2 id="years">二十七、民國年份</h2>
 
 <div class="mnemonic">
   <span class="tag">口訣</span>
@@ -1528,16 +1931,10 @@
 
 <a class="top" href="#top">↑ 回頂端</a>
 
-<!-- ══════ PART 5 ══════ -->
-<div class="part">PART 5 ─ 判斷與適用對象</div>
+<!-- ══════ PART 6 ══════ -->
+<div class="part">PART 6 ─ 判斷與適用對象</div>
 
-<h2 id="judge">二十二、判斷題型</h2>
-
-<div class="mnemonic">
-  <span class="tag">口訣</span>
-  <div class="chant">業 · 醫 · 核 · 調</div>
-  <p class="why">危險選擇四道關卡：<b>業</b>務員（第一線最重要）→ 體檢<b>醫</b>師 → <b>核</b>保人員 → 保險<b>調</b>查員。照「接觸客戶的先後」排。</p>
-</div>
+<h2 id="judge">二十八、判斷題型</h2>
 
 <table class="t">
   <caption>適用對象 — 看到關鍵字直接對應</caption>
@@ -1598,7 +1995,7 @@
   <tr><th>事項</th><th>機關／數字</th></tr>
   <tr><td>強制汽車責任保險主管機關</td><td><b>金管會</b>（非交通部）</td></tr>
   <tr><td>未投保罰鍰開罰</td><td>公路主管機關</td></tr>
-  <tr><td>洗錢交易申報</td><td>法務部調查局</td></tr>
+  <tr><td>洗錢交易申報（大額5日／疑似10日）</td><td>法務部調查局</td></tr>
   <tr><td>保險業「負責人」認定依據</td><td><b>公司法或合作社法</b></td></tr>
   <tr><td>保險業保證金繳存國庫</td><td>資本或基金實收總額 <b>15%</b></td></tr>
   <tr><td>保險商品駁回後再送審</td><td><b>25</b> 工作日核復／<b>45</b> 工作日准駁</td></tr>
@@ -1618,8 +2015,9 @@
 </div>
 
 <footer>
-  <b>考前一天：</b>PART 1 觀念 ＋ PART 2 車險架構圖 ＋ PART 3 火險三張保單<br>
-  <b>考前一小時：</b>橘框陷阱 → 口訣框 → 車險係數表 ＋ 火險數字速查
+  <b>考前一天：</b>PART 1 觀念地基 ＋ PART 2 車險架構 ＋ PART 3 火險三張保單<br>
+  <b>考前一小時：</b>橘框陷阱 → 口訣框 → PART 5 數字速查<br>
+  <b>時間不夠就放掉：</b>PART 4 的運輸與工程險
 </footer>
 
 </body>
